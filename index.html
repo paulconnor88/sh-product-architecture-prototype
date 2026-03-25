@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simplyhealth — Product architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:#1a1a1a}
+
+/* Password screen */
+#gate{display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f7f6f3}
+.gate-box{text-align:center;max-width:360px;padding:40px}
+.gate-logo{font-size:24px;font-weight:700;color:#00B2A9;margin-bottom:8px}
+.gate-sub{font-size:13px;color:#6b6b6b;margin-bottom:28px}
+.gate-input{width:100%;padding:12px 16px;font-size:15px;font-family:inherit;border:1px solid #e5e3de;border-radius:8px;outline:none;text-align:center;transition:border-color .2s}
+.gate-input:focus{border-color:#00B2A9}
+.gate-btn{width:100%;padding:12px;font-size:14px;font-weight:600;font-family:inherit;background:#00B2A9;color:#fff;border:none;border-radius:8px;cursor:pointer;margin-top:12px;transition:opacity .15s}
+.gate-btn:hover{opacity:.9}
+.gate-err{font-size:12px;color:#d4483b;margin-top:10px;min-height:18px}
+
+/* Main content - hidden until authenticated */
+#main{display:none}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div id="gate">
+  <div class="gate-box">
+    <div class="gate-logo">Simplyhealth</div>
+    <div class="gate-sub">Product architecture prototype — enter password to continue</div>
+    <input type="password" class="gate-input" id="pw" placeholder="Password" autofocus>
+    <button class="gate-btn" id="go">Continue</button>
+    <div class="gate-err" id="err"></div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main">
+<style>
+:root{--sh:#00B2A9;--sh-lt:#e6f8f7;--dk:#1a1a1a;--gr:#6b6b6b;--lt:#f7f6f3;--bd:#e5e3de;--wh:#fff}
+body{line-height:1.6}
+.c{max-width:920px;margin:0 auto;padding:0 24px}
+.hd{padding:28px 0;border-bottom:1px solid var(--bd)}
+.hd-in{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:20px;font-weight:700;color:var(--sh);letter-spacing:-.5px}
+.bg{font-size:11px;font-weight:500;background:var(--sh-lt);color:var(--sh);padding:4px 12px;border-radius:20px}
+h1{font-size:28px;font-weight:700;letter-spacing:-.8px;margin-top:36px}
+h1 span{color:var(--sh)}
+.sub{font-size:14px;color:var(--gr);margin:8px 0 12px;max-width:660px;line-height:1.7}
+.shift{background:var(--lt);border-radius:12px;padding:16px 20px;margin-bottom:28px;font-size:13px;color:#444;line-height:1.7}
+.shift strong{color:var(--dk)}
+.slider-wrap{background:var(--wh);border:1px solid var(--bd);border-radius:14px;padding:24px 28px;margin-bottom:32px}
+.slider-q{font-size:13px;font-weight:600;color:var(--gr);text-transform:uppercase;letter-spacing:.4px;margin-bottom:14px}
+.slider-row{display:flex;align-items:center;gap:20px}
+.slider-row input[type=range]{flex:1;-webkit-appearance:none;height:6px;border-radius:3px;background:var(--bd);outline:none}
+.slider-row input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--sh);cursor:pointer;box-shadow:0 2px 10px rgba(0,178,169,.3);transition:transform .15s}
+.slider-row input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.1)}
+.slider-name{font-size:17px;font-weight:700;min-width:80px;text-align:right;transition:color .3s}
+.slider-ticks{display:flex;justify-content:space-between;margin-top:8px;padding:0 2px}
+.slider-tick{font-size:11px;color:var(--gr);font-weight:500;cursor:pointer;transition:all .2s}
+.slider-tick.active{color:var(--sh);font-weight:700}
+.slider-result{margin-top:16px;padding-top:16px;border-top:1px solid var(--bd);font-size:14px;line-height:1.7;min-height:60px;transition:opacity .2s}
+.slider-result .cost{color:var(--sh);font-weight:700;font-size:16px}
+.slider-result strong{font-weight:600}
+.sh2{font-size:22px;font-weight:700;letter-spacing:-.5px;margin:44px 0 6px}
+.sh2 span{color:var(--sh)}
+.sh3{font-size:13px;color:var(--gr);margin-bottom:24px}
+.levels{display:flex;flex-direction:column;gap:3px;border-radius:16px;overflow:hidden}
+.lv{padding:24px 28px;position:relative}
+.lv-tag{display:inline-block;font-size:11px;font-weight:600;padding:3px 10px;border-radius:16px;margin-bottom:4px}
+.lv-formerly{font-size:11px;color:rgba(0,0,0,.35);margin-bottom:12px;font-style:italic}
+.lv-pop{position:absolute;top:16px;right:20px;font-size:11px;font-weight:600;padding:3px 12px;border-radius:16px}
+.lv-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.lv-box h4{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;opacity:.55}
+.lv-cost{font-size:20px;font-weight:700;margin-bottom:2px}
+.lv-cost-sm{font-size:13px;font-weight:500;opacity:.7}
+.lv-gets{font-size:13px;line-height:1.7}
+.lv-gets .inc{opacity:.5;font-size:12px;font-style:italic;display:block;margin-bottom:3px}
+.pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.pill{font-size:11px;padding:3px 9px;border-radius:5px;background:rgba(0,0,0,.05);font-weight:500}
+.lv-conn{text-align:center;padding:4px 0;font-size:10px;color:var(--gr);font-weight:500;letter-spacing:.4px;text-transform:uppercase;background:var(--wh)}
+.l1{background:#f7f6f3}.l1 .lv-tag{background:#dddcd8;color:#5f5e5a}.l1 .lv-cost{color:#3d3d3a}
+.l2{background:#e6f8f7}.l2 .lv-tag{background:#b2ebe7;color:#004d40}.l2 .lv-cost{color:#004d40}
+.l3{background:#e8f0fe}.l3 .lv-tag{background:#a8c7fa;color:#1a3f78}.l3 .lv-cost{color:#1a56a0}.l3 .lv-pop{background:rgba(26,115,232,.12);color:#1a56a0}
+.l4{background:#f3f0ff}.l4 .lv-tag{background:#c8bfff;color:#3a2d8f}.l4 .lv-cost{color:#4a3ab5}
+.reg{background:var(--lt);border-radius:10px;padding:14px 20px;margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.reg p{font-size:13px;color:var(--gr)}
+.reg-btn{padding:8px 20px;font-size:12px;font-weight:600;background:var(--sh);color:#fff;border:none;border-radius:6px;cursor:pointer;font-family:inherit;white-space:nowrap;transition:opacity .15s}
+.reg-btn:hover{opacity:.88}
+.ct-wrap{overflow-x:auto;margin-top:16px;border-radius:12px;border:1px solid var(--bd)}
+.ct{width:100%;border-collapse:collapse;font-size:12px;min-width:700px}
+.ct th,.ct td{padding:10px 12px;text-align:center;border-bottom:1px solid var(--bd);vertical-align:middle}
+.ct thead th{background:var(--lt);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.3px;color:var(--gr);position:sticky;top:0}
+.ct thead th.sh-col{background:var(--sh);color:#fff}
+.ct thead th.lv-col{font-size:10px;letter-spacing:0;text-transform:none;font-weight:500}
+.ct td.ft{text-align:left;font-weight:500;background:#fafaf8;color:var(--dk);min-width:140px}
+.ct td.sh-c{background:var(--sh-lt)}
+.ct .y{color:var(--sh);font-weight:700;font-size:14px}
+.ct .n{color:#d4483b;font-size:14px}
+.ct .p{color:#c48a0e;font-weight:500}
+.ct .note{display:block;font-size:10px;color:var(--gr);font-weight:400;margin-top:1px}
+.ct tbody tr:last-child td{border-bottom:none}
+.ct-foot{font-size:11px;color:var(--gr);margin-top:14px;line-height:1.6}
+.ft-note{padding:28px 0;border-top:1px solid var(--bd);margin-top:48px;font-size:11px;color:var(--gr)}
+@media(max-width:640px){.lv-grid{grid-template-columns:1fr}h1{font-size:22px}.reg{flex-direction:column;text-align:center}}
+</style>
+
+<div class="c">
+  <div class="hd"><div class="hd-in">
+    <div class="logo">Simplyhealth</div>
+    <div class="bg">Product architecture prototype — internal</div>
+  </div></div>
+
+  <h1>1 product. <span>Different levels of care.</span></h1>
+  <div class="sub">Members see one experience, through one brand, in one app. Employers choose the level of healthcare access they want to provide.</div>
+
+  <div class="shift">
+    <strong>The shift:</strong> We stop selling named constructs (Essentials, On-Demand, Optimise) — which research is showing creates both internal and external confusion — and move to selling Simplyhealth as one product, one experience, with different access levels to healthcare.
+  </div>
+
+  <div class="sh2">All <span>levels</span></div>
+  <div class="sh3">Each level builds on the one before. Every employee sees one app, one brand — features unlock based on what you choose.</div>
+
+  <div class="levels">
+    <div class="lv l1">
+      <div class="lv-tag">Simplyhealth — Level 1</div>
+      <div class="lv-formerly">Formerly: On-Demand</div>
+      <div class="lv-grid">
+        <div class="lv-box"><h4>Employer pays</h4><div class="lv-cost">Nothing</div><div class="lv-cost-sm">No cost, no contract, no risk</div></div>
+        <div class="lv-box"><h4>Employee gets</h4><div class="lv-gets">Access to our healthcare network at discounted rates. They choose what they need and pay for it themselves.</div>
+          <div class="pills"><span class="pill">Discounted physio</span><span class="pill">Diagnostic scans</span><span class="pill">Neurodiversity assessments</span><span class="pill">Menopause coaching</span><span class="pill">Digital therapy</span><span class="pill">Discounted eyecare</span><span class="pill">Gut health consultations</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="lv-conn">+ add digital health ↓</div>
+    <div class="lv l2">
+      <div class="lv-tag">Simplyhealth — Level 2</div>
+      <div class="lv-formerly">Formerly: Essentials</div>
+      <div class="lv-grid">
+        <div class="lv-box"><h4>Employer pays</h4><div class="lv-cost">From £3 <span class="lv-cost-sm">/ employee / month</span></div></div>
+        <div class="lv-box"><h4>Employee gets</h4><div class="lv-gets"><span class="inc">Everything in Level 1, plus:</span>Free access to online healthcare — GP, mental health support, physio assessments — plus additional self-pay services through our network.</div>
+          <div class="pills"><span class="pill">24/7 GP & nurse</span><span class="pill">Mental health counselling</span><span class="pill">MSK assessments</span><span class="pill">Life advice helpline</span><span class="pill">Gym discounts</span><span class="pill">+ all self-pay network services</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="lv-conn">+ add claim-back cover ↓</div>
+    <div class="lv l3">
+      <div class="lv-tag">Simplyhealth — Level 3</div>
+      <div class="lv-formerly">Formerly: Optimise</div>
+      <div class="lv-pop">Most popular</div>
+      <div class="lv-grid">
+        <div class="lv-box"><h4>Employer pays</h4><div class="lv-cost">From £3.99 <span class="lv-cost-sm">/ employee / month</span></div><div class="lv-cost-sm">Flexible benefit limits you choose</div></div>
+        <div class="lv-box"><h4>Employee gets</h4><div class="lv-gets"><span class="inc">Everything in Level 2, plus:</span>Ability to claim back on in-person treatments — dental, optical, physio and more, up to annual limits.</div>
+          <div class="pills"><span class="pill">Dental claim-back</span><span class="pill">Optical claim-back</span><span class="pill">Physio & chiropractic</span><span class="pill">Diagnostics</span><span class="pill">Prescriptions</span><span class="pill">Podiatry</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="lv-conn">+ add full protection ↓</div>
+    <div class="lv l4">
+      <div class="lv-tag">Simplyhealth — Level 4</div>
+      <div class="lv-formerly">Formerly: N/A — new</div>
+      <div class="lv-grid">
+        <div class="lv-box"><h4>Employer pays</h4><div class="lv-cost">Coming soon</div><div class="lv-cost-sm">Premium tier</div></div>
+        <div class="lv-box"><h4>Employee gets</h4><div class="lv-gets"><span class="inc">Everything in Level 3, plus:</span>Day-to-day cover and private medical insurance. One provider for everyday healthcare and serious medical protection.</div>
+          <div class="pills"><span class="pill">Private hospital treatment</span><span class="pill">Specialist referrals</span><span class="pill">Surgery & recovery</span><span class="pill">Cancer treatment</span></div>
+        </div>
+      </div>
+      <div class="reg"><p>Level 4 is in development. Interested in shaping it?</p><button class="reg-btn" onclick="this.textContent='Registered ✓';this.style.background='#004d40'">Register interest</button></div>
+    </div>
+  </div>
+
+  <div class="sh2">How we <span>compare</span></div>
+  <div class="sh3">Our levels mapped against the competition. The point is simple: we do it all. They don't.</div>
+
+  <div class="ct-wrap">
+  <table class="ct">
+    <thead>
+      <tr><th class="ft" style="text-align:left">&nbsp;</th><th class="sh-col" colspan="4">Simplyhealth</th><th colspan="4">Competitors</th></tr>
+      <tr><th class="ft" style="text-align:left">Capability</th><th class="sh-col lv-col">Level 1</th><th class="sh-col lv-col">Level 2</th><th class="sh-col lv-col">Level 3</th><th class="sh-col lv-col">Level 4</th><th class="lv-col">Benenden</th><th class="lv-col">Medicash</th><th class="lv-col">AXA</th><th class="lv-col">Unum</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="ft">Discounted self-pay care network</td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td><span class="n">✗</span></td><td><span class="n">✗</span></td><td><span class="n">✗</span></td><td><span class="n">✗</span></td></tr>
+      <tr><td class="ft">Neurodiversity assessments</td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td><span class="n">✗</span></td><td><span class="n">✗</span></td><td><span class="p">Add-on</span></td><td><span class="n">✗</span></td></tr>
+      <tr><td class="ft">24/7 GP access</td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td></tr>
+      <tr><td class="ft">Mental health counselling</td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="p">EAP bolt-on</span></td><td><span class="p">Add-on</span></td><td><span class="y">✓</span></td></tr>
+      <tr><td class="ft">MSK / physio assessments</td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="p">Digital only</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td></tr>
+      <tr><td class="ft">Dental claim-back</td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td><span class="p">Separate product</span></td><td><span class="y">✓</span></td><td><span class="n">✗</span></td><td><span class="y">✓</span></td></tr>
+      <tr><td class="ft">Optical claim-back</td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td><span class="p">Separate product</span></td><td><span class="y">✓</span></td><td><span class="n">✗</span></td><td><span class="y">✓</span></td></tr>
+      <tr><td class="ft">Physio & chiropractic claim-back</td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td><span class="p">Separate product</span></td><td><span class="y">✓</span></td><td><span class="n">✗</span></td><td><span class="y">✓</span></td></tr>
+      <tr><td class="ft">Private medical treatment</td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="y">✓</span><span class="note">Coming</span></td><td><span class="n">✗</span><span class="note">Not an insurer</span></td><td><span class="n">✗</span><span class="note">Cash plans only</span></td><td><span class="y">✓</span><span class="note">Core offering</span></td><td><span class="n">✗</span><span class="note">Protection only</span></td></tr>
+      <tr><td class="ft">Cancer treatment cover</td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="n">—</span></td><td class="sh-c"><span class="y">✓</span><span class="note">Coming</span></td><td><span class="n">✗</span></td><td><span class="n">✗</span></td><td><span class="y">✓</span></td><td><span class="n">✗</span></td></tr>
+      <tr><td class="ft">Pre-existing conditions covered</td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">TBC</span></td><td><span class="y">✓</span></td><td><span class="p">Partial</span></td><td><span class="n">✗</span></td><td><span class="y">✓</span></td></tr>
+      <tr><td class="ft">Single app, single brand</td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td class="sh-c"><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="y">✓</span></td><td><span class="p">Multiple</span></td><td><span class="y">✓</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="ct-foot"><strong>The story:</strong> No other provider covers the full spectrum from free self-pay access through to PMI. Benenden and Unum can't offer private medical treatment. Medicash only does cash plans. AXA does PMI but not everyday healthcare. We're the only one that does it all — in one product, at every price point, through one app.</div>
+
+  <div class="sh2">What's <span>best for me?</span></div>
+  <div class="sh3">How an employer would navigate the levels.</div>
+  <div class="slider-wrap">
+    <div class="slider-q">What's best for me?</div>
+    <div class="slider-row">
+      <input type="range" min="1" max="4" value="2" step="1" id="sl">
+      <div class="slider-name" id="sl-name">Level 2</div>
+    </div>
+    <div class="slider-ticks">
+      <span class="slider-tick" data-v="1">Level 1</span>
+      <span class="slider-tick active" data-v="2">Level 2</span>
+      <span class="slider-tick" data-v="3">Level 3</span>
+      <span class="slider-tick" data-v="4">Level 4</span>
+    </div>
+    <div class="slider-result" id="sl-result"></div>
+  </div>
+
+  <div class="ft-note">
+    Product architecture prototype — Paul Connor, Head of Product (Digital) — March 2026<br>
+    Discussion document. Naming and level labels are illustrative. Not for external distribution.
+  </div>
+</div>
+</div>
+
+<script>
+// Password gate
+const HASH='a]Zx';// simple obfuscation of SH2026
+function check(){
+  const v=document.getElementById('pw').value;
+  if(v==='SH2026'){
+    document.getElementById('gate').style.display='none';
+    document.getElementById('main').style.display='block';
+    initSlider();
+  } else {
+    document.getElementById('err').textContent='Incorrect password';
+    document.getElementById('pw').value='';
+    document.getElementById('pw').focus();
+  }
+}
+document.getElementById('go').addEventListener('click',check);
+document.getElementById('pw').addEventListener('keydown',e=>{if(e.key==='Enter')check()});
+
+function initSlider(){
+  const sl=document.getElementById('sl'),sn=document.getElementById('sl-name'),sr=document.getElementById('sl-result'),tks=document.querySelectorAll('.slider-tick');
+  const cols=['#5f5e5a','#004d40','#1a56a0','#4a3ab5'];
+  const results=[
+    '<strong>I want to offer something, but I have no budget.</strong><br>Give your people access to discounted healthcare through our network \u2014 physio, scans, therapy, eyecare \u2014 at rates they can\u2019t get on their own. <span class="cost">You pay nothing.</span>',
+    '<strong>I want to give my people real healthcare support.</strong><br>Everything in Level 1, plus 24/7 GP access, mental health counselling, and MSK assessments included for every employee. <span class="cost">From \u00a33 per employee per month.</span>',
+    '<strong>I want comprehensive cover my people will actually use.</strong><br>Everything in Level 2, plus employees can claim back on dental, optical, physio and more. The full package. <span class="cost">From \u00a33.99 per employee per month.</span>',
+    '<strong>I want to offer the best protection available.</strong><br>Everything in Level 3, plus private medical insurance \u2014 hospital treatment, specialist referrals, surgery and cancer cover. One provider for everything. <span class="cost">Coming soon.</span>'
+  ];
+  function upd(v){v=parseInt(v);sl.value=v;sn.textContent='Level '+v;sn.style.color=cols[v-1];sr.innerHTML=results[v-1];tks.forEach(t=>t.classList.toggle('active',parseInt(t.dataset.v)===v))}
+  sl.addEventListener('input',e=>upd(e.target.value));
+  tks.forEach(t=>t.addEventListener('click',()=>upd(t.dataset.v)));
+  upd(2);
+}
+</script>
+</body>
+</html>
