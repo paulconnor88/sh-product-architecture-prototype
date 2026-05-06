@@ -253,6 +253,24 @@ a{color:inherit;text-decoration:none}
 .plan-cta.primary:hover{background:var(--sh-dk);border-color:var(--sh-dk)}
 .plan-tagline{font-size:13px;color:var(--gr);line-height:1.6;min-height:42px}
 
+/* Three-column pricing grid */
+.pricing-grid-3{grid-template-columns:repeat(3,1fr)}
+.plan-layer-tag{font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--sh);margin-bottom:6px}
+.plan-name-new{font-size:20px;font-weight:700;margin-bottom:4px;letter-spacing:-.3px}
+.plan-desc{font-size:12px;color:var(--gr);margin-bottom:16px;line-height:1.5}
+.plan-merge-note{margin-top:16px;padding-top:14px;border-top:1px dashed var(--bd);font-size:11px;color:var(--gr-lt);line-height:1.5;font-style:italic}
+
+/* Billing toggle */
+.billing-toggle{margin-bottom:16px}
+.billing-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--gr);margin-bottom:8px}
+.billing-options{display:flex;gap:4px;background:var(--lt);padding:3px;border-radius:7px}
+.billing-opt{flex:1;padding:7px 8px;font-size:11px;font-weight:600;font-family:inherit;border:none;border-radius:5px;cursor:pointer;background:transparent;color:var(--gr);transition:all .15s;text-align:center}
+.billing-opt.active{background:var(--sh);color:#fff}
+.billing-opt:hover:not(.active){background:var(--bd)}
+
+/* 3-column feature rows */
+.feat-row-3{grid-template-columns:2.2fr repeat(3,1fr)}
+
 /* FEATURE TABLE */
 .feat-section{max-width:1140px;margin:60px auto 0;padding:0 32px}
 .feat-headers{margin-top:60px;margin-bottom:0}
@@ -324,6 +342,7 @@ a{color:inherit;text-decoration:none}
 
 @media(max-width:900px){
   .pricing-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .pricing-grid-3{grid-template-columns:1fr}
   .plan.popular{transform:none}
   .hero-inner{grid-template-columns:1fr}
   .hero-visual{display:none}
@@ -584,8 +603,8 @@ a{color:inherit;text-decoration:none}
   <div class="commentary">
     <div class="commentary-inner">
       <div class="commentary-step">Step 2 of 3 · Plans &amp; pricing</div>
-      <h2>One core product. Different <em>ways to access</em>.</h2>
-      <p class="commentary-lead">Our offering is confusing — internally and externally — because we sell different named constructs as if they were different products. They're not. There's one core proposition: <strong>access to healthcare services</strong>. What changes between plans is how you pay for it and what's bundled in.</p>
+      <h2>Three layers. Each one <em>builds on the last</em>.</h2>
+      <p class="commentary-lead">We don't have four products. We have three layers of healthcare access. <strong>Digital Services</strong> at the base — whether the employer pays (old Essentials) or the employee pays per use (old On-Demand) is a billing decision, not a product decision. <strong>Cashplan</strong> adds claim-back cover. <strong>PMI</strong> adds private medical. Each layer stacks on the previous one.</p>
     </div>
   </div>
 
@@ -610,34 +629,38 @@ a{color:inherit;text-decoration:none}
         </nav>
 
         <section class="pr-hero">
-          <h1>One product. <em>Pick your plan</em>.</h1>
-          <p>All plans include access to our care network, a single app for your employees, and support for pre-existing conditions. Scale up when you're ready — no switching, no re-onboarding.</p>
+          <h1>Three layers. Each one <em>builds on the last</em>.</h1>
+          <p>One product, one app, one relationship. Choose how much healthcare to unlock for your people — and scale up whenever you're ready.</p>
         </section>
 
-        <div class="pricing-grid">
+        <div class="pricing-grid pricing-grid-3">
           <div class="plan">
-            <div class="plan-price">
-              <div class="plan-amount"><span class="currency">£</span>0</div>
-              <div class="plan-period">per employee / month</div>
-              <div class="plan-note">Employees pay per use</div>
+            <div class="plan-layer-tag">Layer 1</div>
+            <div class="plan-name-new">Digital Services</div>
+            <div class="plan-desc">GP, mental health, MSK, care network access</div>
+            <div class="billing-toggle">
+              <div class="billing-label">Who pays?</div>
+              <div class="billing-options">
+                <button class="billing-opt active" data-billing="employer">Employer pays</button>
+                <button class="billing-opt" data-billing="employee">Employee self-pay</button>
+              </div>
+            </div>
+            <div class="plan-price" id="ds-price">
+              <div class="plan-starting">Starting from</div>
+              <div class="plan-amount"><span class="currency">£</span>2</div>
+              <div class="plan-period" id="ds-period">per employee / month</div>
+              <div class="plan-note" id="ds-note">Employer pays from £2/month — employee gets services included</div>
             </div>
             <button class="plan-cta">Get started</button>
-            <div class="plan-tagline">Give your team access to our care network. They pay for what they use.</div>
-          </div>
-
-          <div class="plan">
-            <div class="plan-price">
-              <div class="plan-starting">Starting from</div>
-              <div class="plan-amount"><span class="currency">£</span>3</div>
-              <div class="plan-period">per employee / month</div>
-              <div class="plan-note">Whole workforce</div>
-            </div>
-            <button class="plan-cta">Start free trial</button>
-            <div class="plan-tagline">24/7 digital healthcare — GP, mental health, MSK — included for everyone.</div>
+            <div class="plan-tagline" id="ds-tagline">24/7 digital healthcare included for every employee, plus access to our discounted care network.</div>
+            <div class="plan-merge-note">This layer replaces both On-Demand and Essentials — same service, different billing.</div>
           </div>
 
           <div class="plan popular">
             <div class="plan-badge">Most popular</div>
+            <div class="plan-layer-tag">Layer 2</div>
+            <div class="plan-name-new">Cashplan</div>
+            <div class="plan-desc">Digital Services + Cash plan cover</div>
             <div class="plan-price">
               <div class="plan-starting">Starting from</div>
               <div class="plan-amount"><span class="currency">£</span>3.99</div>
@@ -645,38 +668,39 @@ a{color:inherit;text-decoration:none}
               <div class="plan-note">Flexible benefit limits</div>
             </div>
             <button class="plan-cta primary">Get a quote</button>
-            <div class="plan-tagline">Everything above, plus claim-back cover for dental, optical, physio &amp; more.</div>
+            <div class="plan-tagline">Everything in Digital Services, plus claim-back pots for dental, optical, physio, diagnostics and more.</div>
           </div>
 
           <div class="plan">
+            <div class="plan-layer-tag">Layer 3</div>
+            <div class="plan-name-new">PMI</div>
+            <div class="plan-desc">Digital Services + Cash plan + Private medical</div>
             <div class="plan-price">
               <div class="plan-amount coming">Coming soon</div>
               <div class="plan-period">Premium tier</div>
-              <div class="plan-note">Full PMI included</div>
+              <div class="plan-note">The complete package</div>
             </div>
             <button class="plan-cta">Register interest</button>
-            <div class="plan-tagline">Everything above, plus private medical insurance.</div>
+            <div class="plan-tagline">Everything in Cashplan, plus private hospital treatment, specialist referrals, surgery and cancer cover.</div>
           </div>
         </div>
 
         <!-- Feature table -->
         <div class="feat-section feat-headers">
-          <div class="feat-row feat-row-header">
+          <div class="feat-row feat-row-header feat-row-3">
             <div class="feat-name feat-name-header">Compare what's included</div>
-            <div class="feat-cell feat-col-header">On-Demand</div>
-            <div class="feat-cell feat-col-header">Essentials</div>
-            <div class="feat-cell feat-col-header feat-col-header-popular">Optimise</div>
-            <div class="feat-cell feat-col-header">Protect</div>
+            <div class="feat-cell feat-col-header">Digital Services</div>
+            <div class="feat-cell feat-col-header feat-col-header-popular">Cashplan</div>
+            <div class="feat-cell feat-col-header">PMI</div>
           </div>
         </div>
 
         <div class="feat-section">
-          <div class="feat-group-title">Care network — included on every plan</div>
-          <div class="feat-row">
+          <div class="feat-group-title">Care network</div>
+          <div class="feat-row feat-row-3">
             <div class="feat-name">Discounted self-pay services
               <span class="feat-desc">Physio, scans, therapy, eyecare, neurodiversity assessments</span>
             </div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
@@ -685,23 +709,20 @@ a{color:inherit;text-decoration:none}
 
         <div class="feat-section" style="margin-top:32px">
           <div class="feat-group-title">Digital health services</div>
-          <div class="feat-row">
+          <div class="feat-row feat-row-3">
             <div class="feat-name">24/7 GP &amp; nurse appointments</div>
-            <div class="feat-cell"><span class="f-cross">—</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
           </div>
-          <div class="feat-row">
+          <div class="feat-row feat-row-3">
             <div class="feat-name">Mental health counselling</div>
-            <div class="feat-cell"><span class="f-cross">—</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
           </div>
-          <div class="feat-row">
+          <div class="feat-row feat-row-3">
             <div class="feat-name">MSK / physio digital assessments</div>
-            <div class="feat-cell"><span class="f-cross">—</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
@@ -709,21 +730,17 @@ a{color:inherit;text-decoration:none}
         </div>
 
         <div class="feat-section" style="margin-top:32px">
-          <div class="feat-group-title">Claim-back pots</div>
-          <div class="feat-row">
+          <div class="feat-group-title">Claim-back pots (cash plan)</div>
+          <div class="feat-row feat-row-3">
             <div class="feat-name">Dental, optical, physio cash-back
               <span class="feat-desc">In-person treatment cost cover, up to annual limits</span>
             </div>
             <div class="feat-cell"><span class="f-cross">—</span></div>
-            <div class="feat-cell"><span class="f-cross">—</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
           </div>
-          <div class="feat-row">
-            <div class="feat-name">Diagnostics &amp; prescriptions
-              <span class="feat-desc">Scans, consultations, prescription cost cover</span>
-            </div>
-            <div class="feat-cell"><span class="f-cross">—</span></div>
+          <div class="feat-row feat-row-3">
+            <div class="feat-name">Diagnostics &amp; prescriptions</div>
             <div class="feat-cell"><span class="f-cross">—</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
@@ -732,18 +749,17 @@ a{color:inherit;text-decoration:none}
 
         <div class="feat-section" style="margin-top:32px">
           <div class="feat-group-title">Private medical insurance</div>
-          <div class="feat-row">
+          <div class="feat-row feat-row-3">
             <div class="feat-name">Hospital, surgery, cancer treatment
               <span class="feat-desc">Specialist referrals, private hospital network</span>
             </div>
-            <div class="feat-cell"><span class="f-cross">—</span></div>
             <div class="feat-cell"><span class="f-cross">—</span></div>
             <div class="feat-cell"><span class="f-cross">—</span></div>
             <div class="feat-cell"><span class="f-check">✓</span></div>
           </div>
         </div>
 
-        <div class="pr-foot-note">All plans · Pre-existing conditions covered · No age limits · Single app · Whole-workforce coverage</div>
+        <div class="pr-foot-note">All layers · Pre-existing conditions covered · No age limits · Single app · Whole-workforce coverage</div>
 
         <div class="fake-foot">
           <div>© 2026 Simplyhealth</div>
@@ -761,15 +777,15 @@ a{color:inherit;text-decoration:none}
     <div class="commentary-inner">
       <div class="commentary-step">Step 3 of 3 · Employee experience</div>
       <h2>One app. The same brand. <em>Different access</em>.</h2>
-      <p class="commentary-lead">Whichever plan the employer picks, the employee opens the same app. <strong>Features unlock or lock based on the plan</strong> — but the employee always sees what's possible. This is how Spotify, Notion and every successful SaaS handles tiering: you make the upgrade obvious without making the current state feel cheap.</p>
+      <p class="commentary-lead">Whichever layer the employer picks, the employee opens the same app. <strong>Features unlock or lock based on the layer</strong> — but the employee always sees what's possible. The service is identical across billing models; the difference is who pays.</p>
       <div class="commentary-grid">
         <div class="commentary-block">
           <h4>What this solves</h4>
-          <p>Today, an employee on Essentials and an employee on Optimise have <strong>different apps and different experiences</strong> — which means different brand impressions, different support journeys, and zero cross-pollination of upgrade demand. One unified experience fixes all three.</p>
+          <p>Today, employees on different products have <strong>different experiences</strong> — different apps, different brands, zero cross-pollination of upgrade demand. One unified experience fixes all three. The On-Demand/Essentials split disappears entirely — it's just "Digital Services" with a different payment method.</p>
         </div>
         <div class="commentary-block">
           <h4>The upgrade ladder</h4>
-          <p>An On-Demand employee sees self-pay prices on every service. An Essentials employee sees those same services as "Included." An Optimise employee additionally sees their claim-back pots filling up. <strong>Each tier feels like a real upgrade</strong> — and creates natural internal demand for the next.</p>
+          <p>A self-pay employee sees prices on every service. An employer-funded employee sees those same services as "Included." An Cashplan employee additionally sees their claim-back pots filling up. <strong>Each layer feels like a real upgrade</strong> — and creates natural internal demand for the next.</p>
         </div>
       </div>
     </div>
@@ -784,11 +800,11 @@ a{color:inherit;text-decoration:none}
           <div class="app-controls">
             <div class="app-controls-label">View as employee on:</div>
             <div class="app-selector-pills">
-              <button class="app-pill" data-plan="ondemand">On-Demand</button>
-              <button class="app-pill active" data-plan="essentials">Essentials</button>
-              <button class="app-pill" data-plan="optimise">Optimise</button>
+              <button class="app-pill" data-plan="selfpay">Digital Services (self-pay)</button>
+              <button class="app-pill active" data-plan="employer">Digital Services (employer-paid)</button>
+              <button class="app-pill" data-plan="cashplan">Cashplan</button>
             </div>
-            <div class="app-controls-hint" id="app-hint">Digital health is included. Claim-back pots are locked.</div>
+            <div class="app-controls-hint" id="app-hint">Digital health included by employer. Claim-back pots not unlocked.</div>
           </div>
 
           <div class="app-frame">
@@ -865,7 +881,7 @@ a{color:inherit;text-decoration:none}
 
               <!-- UPGRADE NUDGE -->
               <div class="app-upgrade-card" id="app-upgrade-card">
-                <h4 id="app-upgrade-title">Claim-back available on Optimise</h4>
+                <h4 id="app-upgrade-title">Claim-back available on Cashplan</h4>
                 <p id="app-upgrade-text">Ask your HR team about upgrading to claim back on dental, optical and physio.</p>
                 <button class="app-upgrade-btn" id="app-upgrade-btn">Learn more</button>
               </div>
@@ -893,9 +909,9 @@ document.querySelectorAll('.proto-step').forEach(s=>{
 
 // App view selector
 const planConfigs={
-  ondemand:{
-    label:'On-Demand · Self-pay',
-    hint:'Network services available at self-pay rates. Digital health & claim-back not unlocked by employer.',
+  selfpay:{
+    label:'Digital Services · Self-pay',
+    hint:'Same services, but the employee pays per use. The employer opens the door at no cost.',
     services:{
       gp:{type:'cost',value:'£49'},
       mental:{type:'cost',value:'£65'},
@@ -903,14 +919,14 @@ const planConfigs={
       gym:{type:'cost',value:'Discount'}
     },
     potsLocked:true,
-    upgradeTitle:'Want more? Upgrade your account',
-    upgradeText:'Your employer covers self-pay access. You can upgrade your personal account to unlock 24/7 GP, mental health support, MSK and more — from £3/month.',
-    upgradeCTA:'Upgrade my account',
+    upgradeTitle:'Your employer could include this for free',
+    upgradeText:'These services are available at self-pay rates. If your employer upgrades to employer-funded Digital Services, they become included at no cost to you.',
+    upgradeCTA:'Ask your employer',
     showUpgrade:true
   },
-  essentials:{
-    label:'Essentials plan',
-    hint:'Digital health is included by your employer. Claim-back pots are not unlocked.',
+  employer:{
+    label:'Digital Services · Employer-paid',
+    hint:'Digital health included by employer. Claim-back pots not unlocked.',
     services:{
       gp:{type:'included',value:'Included'},
       mental:{type:'included',value:'Included'},
@@ -919,12 +935,12 @@ const planConfigs={
     },
     potsLocked:true,
     upgradeTitle:'Want claim-back cover?',
-    upgradeText:'Your employer pays for digital health. To get claim-back on dental, optical and physio, ask HR to upgrade — or unlock it on your personal account.',
+    upgradeText:'Your employer pays for digital health. Upgrading to Cashplan unlocks claim-back pots for dental, optical, physio and more.',
     upgradeCTA:'See upgrade options',
     showUpgrade:true
   },
-  optimise:{
-    label:'Optimise plan',
+  cashplan:{
+    label:'Cashplan',
     hint:'Everything unlocked — digital health and claim-back pots are all live.',
     services:{
       gp:{type:'included',value:'Included'},
@@ -933,8 +949,8 @@ const planConfigs={
       gym:{type:'included',value:'Included'}
     },
     potsLocked:false,
-    upgradeTitle:'Looking for full PMI?',
-    upgradeText:'Private medical insurance is coming soon to Simplyhealth. Register your interest with your HR team.',
+    upgradeTitle:'Private medical insurance coming soon',
+    upgradeText:'The next layer adds PMI — hospital treatment, specialist referrals, surgery and cancer cover. Register your interest with HR.',
     upgradeCTA:'Register interest',
     showUpgrade:true
   }
@@ -1019,9 +1035,35 @@ function applyAppView(plan){
 document.querySelectorAll('.app-pill').forEach(p=>{
   p.addEventListener('click',()=>applyAppView(p.dataset.plan));
 });
-applyAppView('essentials');
+applyAppView('employer');
+
+// Billing toggle on Digital Services card
+document.querySelectorAll('.billing-opt').forEach(opt=>{
+  opt.addEventListener('click',()=>{
+    document.querySelectorAll('.billing-opt').forEach(o=>o.classList.remove('active'));
+    opt.classList.add('active');
+    const billing=opt.dataset.billing;
+    const priceEl=document.getElementById('ds-price');
+    const noteEl=document.getElementById('ds-note');
+    const tagEl=document.getElementById('ds-tagline');
+    if(billing==='employer'){
+      priceEl.querySelector('.plan-starting').style.display='block';
+      priceEl.querySelector('.plan-amount').innerHTML='<span class="currency">£</span>2';
+      document.getElementById('ds-period').textContent='per employee / month';
+      noteEl.textContent='Employer pays from £2/month — employee gets services included';
+      tagEl.textContent='24/7 digital healthcare included for every employee, plus access to our discounted care network.';
+    } else {
+      priceEl.querySelector('.plan-starting').style.display='block';
+      priceEl.querySelector('.plan-amount').innerHTML='<span class="currency">£</span>0';
+      document.getElementById('ds-period').textContent='to the employer';
+      noteEl.textContent='Employer pays nothing — employee pays per use at discounted rates';
+      tagEl.textContent='Give your team access to our care network at no cost to you. Employees pay for services themselves at discounted rates.';
+    }
+  });
+});
 </script>
-</div>
+
+</div><!-- /main -->
 
 <script>
 function checkGate(){
