@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simplyhealth — Corporate proposition concept</title>
+<title>Simplyhealth</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -19,181 +19,64 @@
 .gate-btn:hover{opacity:.9}
 .gate-err{font-size:12px;color:#d4483b;margin-top:10px;min-height:18px}
 
-:root{
-  --sh:#00B2A9;
-  --sh-dk:#008A83;
-  --sh-lt:#e6f8f7;
-  --dk:#0a0a0a;
-  --gr:#6b6b6b;
-  --gr-lt:#9a9a9a;
-  --lt:#f7f6f3;
-  --bd:#e5e3de;
-  --bd-dk:#c8c6c0;
-  --wh:#fff;
-  --warn:#c48a0e;
-  --note-bg:#fffbe6;
-  --note-bd:#f5e6a8;
-}
-body{font-family:'DM Sans',sans-serif;background:var(--lt);color:var(--dk);line-height:1.6}
+:root{--sh:#00B2A9;--sh-dk:#008A83;--sh-lt:#e6f8f7;--dk:#0a0a0a;--gr:#6b6b6b;--gr-lt:#9a9a9a;--lt:#f7f6f3;--bd:#e5e3de;--bd-dk:#c8c6c0;--wh:#fff}
+body{font-family:'DM Sans',sans-serif;background:var(--wh);color:var(--dk);line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 
-/* PROTOTYPE TOP BAR */
-.proto-bar{background:#0a0a0a;color:#fff;padding:14px 32px;display:flex;justify-content:space-between;align-items:center;font-size:13px;position:sticky;top:0;z-index:200}
-.proto-bar-left{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.proto-tag{background:#ffeb3b;color:#000;padding:3px 10px;border-radius:4px;font-weight:700;font-size:10px;letter-spacing:.6px}
-.proto-title{font-weight:600}
-.proto-author{color:#888;font-size:12px}
-.proto-step-nav{display:flex;gap:4px;background:#1a1a1a;padding:4px;border-radius:8px}
-.proto-step{padding:6px 14px;font-size:12px;font-weight:500;color:#aaa;cursor:pointer;border-radius:5px;transition:all .15s}
-.proto-step:hover{color:#fff}
-.proto-step.active{background:var(--sh);color:#fff}
-
-/* CONCEPT COMMENTARY (top of each step) */
-.commentary{background:linear-gradient(180deg,#fafaf6 0%,#f7f6f3 100%);border-bottom:1px solid var(--bd);padding:50px 0}
-.commentary-inner{max-width:920px;margin:0 auto;padding:0 32px}
-.commentary-step{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;color:var(--sh);letter-spacing:.5px;text-transform:uppercase;margin-bottom:14px}
-.commentary-step::before{content:'';display:block;width:24px;height:1px;background:var(--sh)}
-.commentary h2{font-family:'Fraunces',serif;font-size:42px;font-weight:400;letter-spacing:-1.2px;line-height:1.1;margin-bottom:18px;color:var(--dk)}
-.commentary h2 em{font-style:italic;color:var(--sh)}
-.commentary-lead{font-size:17px;color:#3a3a3a;line-height:1.7;margin-bottom:20px;max-width:740px}
-.commentary-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px}
-.commentary-block h4{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--gr);margin-bottom:8px}
-.commentary-block p{font-size:14px;color:#3a3a3a;line-height:1.7}
-.commentary-block strong{color:var(--dk)}
-
-/* Stat callout in commentary */
-.stat-callout{background:var(--wh);border:1px solid var(--bd);border-radius:14px;padding:22px 26px;margin:24px 0;display:flex;align-items:center;gap:24px}
-.stat-callout-big{font-family:'Fraunces',serif;font-size:46px;font-weight:400;color:var(--sh);letter-spacing:-1.4px;line-height:1;flex-shrink:0;font-style:italic}
-.stat-callout-text{font-size:14px;color:#3a3a3a;line-height:1.6}
-.stat-callout-text strong{color:var(--dk);font-weight:600}
-.stat-callout-text sup{color:var(--gr-lt);font-size:10px}
-
-/* Current site visual mock */
-.current-mock{padding:0;background:linear-gradient(180deg,#f0f4f8 0%,#fef0eb 100%);min-height:340px;display:block!important;flex-direction:column;align-items:stretch}
-.cm-tabs{display:flex;align-items:center;gap:0;padding:8px 16px;background:rgba(255,255,255,.6);border-bottom:1px solid rgba(0,0,0,.06)}
-.cm-tab{display:flex;align-items:center;gap:6px;padding:8px 14px;font-size:11px;font-weight:600;color:var(--gr);border-radius:20px;cursor:default}
-.cm-tab-icon{color:#999;font-size:8px}
-.cm-tab-active{background:#fff;color:var(--dk);box-shadow:0 1px 4px rgba(0,0,0,.06)}
-.cm-tab-active .cm-tab-icon{color:var(--sh)}
-.cm-tab-spacer{flex:1}
-.cm-tab-link{font-size:11px;color:var(--gr);padding:0 10px;font-weight:500}
-.cm-account{font-size:11px;font-weight:600;color:var(--dk);background:var(--sh);color:#fff;padding:6px 12px;border-radius:20px;margin-left:6px}
-.cm-body{padding:14px 24px 20px;position:relative}
-.cm-logo{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--dk)}
-.cm-logo .logo-mark{width:18px;height:18px;font-size:10px}
-.cm-nav-right{position:absolute;top:14px;right:24px;display:flex;gap:14px;font-size:10px;color:var(--dk);font-weight:500}
-.cm-hero{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;margin-top:12px;align-items:center}
-.cm-hero-text h3{font-size:22px;font-weight:700;letter-spacing:-.5px;line-height:1.1;color:var(--dk);margin-bottom:8px}
-.cm-hero-text p{font-size:11px;color:var(--gr);line-height:1.5;margin-bottom:10px}
-.cm-cta{display:inline-block;background:var(--dk);color:#fff;padding:7px 14px;border-radius:18px;font-size:11px;font-weight:600}
-.cm-hero-portrait{background:linear-gradient(135deg,#ffd6c2 0%,#ffe8d6 100%);height:120px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:42px}
-.cm-confused{position:absolute;bottom:-12px;right:24px;background:var(--wh);border:1px solid var(--bd);border-radius:10px;padding:8px 12px;display:flex;align-items:center;gap:8px;box-shadow:0 4px 12px rgba(0,0,0,.06);max-width:260px}
-.cm-confused-tag{background:#ffe8e0;color:#a44329;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;flex-shrink:0}
-.cm-confused-text{font-size:11px;color:var(--gr);line-height:1.4;font-style:italic}
-
-.to-this-arrow{margin-top:32px;text-align:center;padding-bottom:8px}
-.to-this-arrow .ba-label{font-size:13px;padding:6px 16px;border-radius:6px}
-
-/* Before / after labels (kept for reuse) */
-.ba-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:4px 10px;border-radius:4px;margin-bottom:10px}
-.ba-label-before{background:#ffe8e0;color:#a44329}
-.ba-label-after{background:var(--sh-lt);color:var(--sh-dk)}
-.ba-img-wrap{border:1px solid var(--bd);border-radius:10px;overflow:hidden;background:var(--wh);display:flex;align-items:center;justify-content:center}
-.ba-img{width:100%;height:auto;object-fit:cover;object-position:top left;display:block}
-.ba-caption{font-size:12px;color:var(--gr);margin-top:10px;line-height:1.5}
-
-.footnote{margin-top:24px;font-size:11px;color:var(--gr-lt);line-height:1.5;font-style:italic}
-
-/* Post-prototype commentary */
-.post-commentary{background:linear-gradient(180deg,#f7f6f3 0%,#fafaf6 100%);border-top:1px solid var(--bd);padding:50px 0}
-.post-commentary-title{font-family:'Fraunces',serif;font-size:32px;font-weight:400;letter-spacing:-.8px;line-height:1.1;margin-bottom:12px;color:var(--dk)}
-.post-commentary-title em{font-style:italic;color:var(--sh)}
-.post-commentary-lead{font-size:15px;color:#3a3a3a;line-height:1.7;margin-bottom:32px;max-width:680px}
-.post-commentary-foot{margin-top:24px;font-size:14px;color:#3a3a3a;line-height:1.7;padding-top:20px;border-top:1px solid var(--bd)}
-.post-commentary-foot strong{color:var(--dk);font-weight:600}
-
-.progression-grid{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr 24px 1fr;gap:0;align-items:stretch}
-.prog-box{background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:20px;display:flex;flex-direction:column}
-.prog-box-popular{border-color:var(--sh);background:#fafffe}
-.prog-box-future{background:var(--lt);border-style:dashed;color:var(--gr)}
-.prog-tier{font-family:'Fraunces',serif;font-size:22px;font-weight:400;letter-spacing:-.5px;color:var(--sh);font-style:italic;margin-bottom:2px}
-.prog-box-future .prog-tier{color:var(--gr)}
-.prog-formerly{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--gr-lt);margin-bottom:14px}
-.prog-box p{font-size:13px;color:#3a3a3a;line-height:1.6}
-.prog-box-future p{color:var(--gr)}
-.prog-arrow{display:flex;align-items:center;justify-content:center;color:var(--sh);font-size:18px;font-weight:300}
-
-/* PROTOTYPE FRAME */
-.proto-frame{padding:40px 32px 80px;background:var(--lt)}
-.proto-frame-inner{max-width:1200px;margin:0 auto}
-.proto-frame-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:11px;color:var(--gr);text-transform:uppercase;letter-spacing:.5px;font-weight:600}
-.proto-frame-label::before{content:'↓ Prototype';color:var(--sh)}
-.proto-frame-label::after{content:'Annotated concept'}
-.proto-canvas{background:var(--wh);border-radius:16px;border:1px solid var(--bd);overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.04)}
-
-/* PAGES */
-.page{display:none}
-.page.active{display:block;animation:fadeIn .3s ease}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-
-/* FAKE BROWSER CHROME */
-.browser{background:#f0eee8;padding:10px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--bd)}
-.browser-dots{display:flex;gap:6px}
-.browser-dot{width:10px;height:10px;border-radius:50%;background:#d4d2cc}
-.browser-url{flex:1;background:var(--wh);padding:5px 14px;border-radius:6px;font-size:12px;color:var(--gr);font-family:monospace}
-
-/* MARKETING NAV */
-.mk-nav{padding:18px 32px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;background:var(--wh)}
-.logo{font-size:20px;font-weight:700;color:var(--sh);letter-spacing:-.5px;display:flex;align-items:center;gap:8px}
+/* NAV */
+.nav{padding:18px 0;border-bottom:1px solid var(--bd);background:var(--wh);position:sticky;top:0;z-index:100}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:20px;font-weight:700;color:var(--sh);letter-spacing:-.5px;display:flex;align-items:center;gap:8px;cursor:pointer}
 .logo-mark{width:26px;height:26px;background:var(--sh);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700}
-.logo-suffix{color:var(--gr);font-weight:400;font-size:13px;margin-left:4px}
-.mk-nav-links{display:flex;gap:28px;align-items:center}
-.mk-nav-link{font-size:13px;font-weight:500;color:var(--dk);cursor:pointer;transition:color .15s}
-.mk-nav-link:hover{color:var(--sh)}
-.mk-nav-cta{padding:8px 16px;background:var(--dk);color:#fff!important;border-radius:7px;font-size:12px;font-weight:600}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-link{font-size:13px;font-weight:500;color:var(--dk);cursor:pointer;padding:6px 0;border-bottom:2px solid transparent;transition:all .15s}
+.nav-link:hover{color:var(--sh)}
+.nav-link.active{color:var(--sh);border-bottom-color:var(--sh)}
+.nav-cta{padding:8px 16px;background:var(--sh);color:#fff;border-radius:7px;font-size:12px;font-weight:600;cursor:pointer}
+.nav-cta:hover{opacity:.88}
+
+.page{display:none}.page.active{display:block;animation:fi .25s ease}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+
+/* BUTTONS */
+.btn{padding:13px 24px;border-radius:9px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;border:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary{background:var(--sh);color:#fff}.btn-primary:hover{background:var(--sh-dk)}
+.btn-secondary{background:var(--wh);color:var(--dk);border:1px solid var(--bd-dk)}.btn-secondary:hover{border-color:var(--dk)}
+.btn-arrow{transition:transform .2s}.btn:hover .btn-arrow{transform:translateX(3px)}
+.btn-lg{font-size:16px;padding:16px 32px}
 
 /* HERO */
-.hero{padding:72px 32px 80px;background:linear-gradient(180deg,#fafaf6 0%,#fff 100%);position:relative}
+.hero{padding:80px 32px 90px;background:linear-gradient(180deg,#fafaf6 0%,#fff 100%)}
 .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center}
 .hero-eyebrow{display:inline-block;font-size:11px;font-weight:600;color:var(--sh);letter-spacing:.6px;text-transform:uppercase;background:var(--sh-lt);padding:5px 12px;border-radius:20px;margin-bottom:20px}
 .hero h1{font-family:'Fraunces',serif;font-size:54px;font-weight:400;line-height:1.05;letter-spacing:-1.5px;margin-bottom:18px}
 .hero h1 em{font-style:italic;color:var(--sh)}
 .hero-sub{font-size:17px;color:var(--gr);line-height:1.6;margin-bottom:28px;max-width:520px}
-.hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
-.btn{padding:13px 24px;border-radius:9px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;border:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-primary{background:var(--sh);color:#fff}
-.btn-primary:hover{background:var(--sh-dk)}
-.btn-secondary{background:var(--wh);color:var(--dk);border:1px solid var(--bd-dk)}
-.btn-secondary:hover{border-color:var(--dk)}
-.btn-arrow{transition:transform .2s}
-.btn:hover .btn-arrow{transform:translateX(3px)}
+.hero-free-callout{display:inline-flex;align-items:center;gap:10px;background:var(--dk);color:#fff;padding:10px 18px;border-radius:10px;font-size:13px;font-weight:500;margin-bottom:28px}
+.hero-free-callout .hfc-price{font-family:'Fraunces',serif;font-size:28px;font-weight:400;color:var(--sh);letter-spacing:-1px}
 
 .hero-visual{position:relative;height:420px}
 .hero-card{position:absolute;background:var(--wh);border-radius:14px;padding:18px;box-shadow:0 8px 28px rgba(0,0,0,.08);border:1px solid var(--bd)}
-.hero-card-1{top:0;right:30px;width:230px;animation:float1 6s ease-in-out infinite}
-.hero-card-2{top:130px;left:0;width:250px;animation:float2 7s ease-in-out infinite}
-.hero-card-3{bottom:0;right:0;width:270px;animation:float3 8s ease-in-out infinite}
-@keyframes float1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes float2{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-@keyframes float3{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.hero-card-1{top:0;right:30px;width:230px;animation:f1 6s ease-in-out infinite}
+.hero-card-2{top:130px;left:0;width:250px;animation:f2 7s ease-in-out infinite}
+.hero-card-3{bottom:0;right:0;width:270px;animation:f3 8s ease-in-out infinite}
+@keyframes f1{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes f2{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes f3{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .hc-icon{width:32px;height:32px;border-radius:9px;background:var(--sh-lt);display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:16px}
 .hc-title{font-size:13px;font-weight:600;margin-bottom:2px}
 .hc-sub{font-size:11px;color:var(--gr)}
-.hc-metric{display:flex;align-items:baseline;gap:5px;margin-top:8px}
-.hc-num{font-size:22px;font-weight:700;color:var(--sh)}
-.hc-unit{font-size:11px;color:var(--gr)}
+.hc-price{font-size:12px;font-weight:700;color:var(--sh-dk);margin-top:6px}
 
 /* STATS */
 .stats{background:var(--dk);color:#fff;padding:44px 32px}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1100px;margin:0 auto}
 .stat{text-align:center}
 .stat-num{font-family:'Fraunces',serif;font-size:38px;font-weight:400;color:var(--sh);letter-spacing:-1px;line-height:1}
-.stat-num em{font-style:italic}
-.stat-lbl{font-size:12px;color:#aaa;margin-top:6px;line-height:1.4}
+.stat-lbl{font-size:12px;color:#aaa;margin-top:6px}
 
-/* SECTION */
-.mk-section{padding:72px 32px;background:var(--wh)}
-.mk-section.alt{background:var(--lt)}
+/* SECTIONS */
+.mk-section{padding:72px 32px}.mk-section.alt{background:var(--lt)}
 .mk-section-inner{max-width:1100px;margin:0 auto}
 .mk-section-head{text-align:center;margin-bottom:48px}
 .mk-eyebrow{font-size:11px;font-weight:600;color:var(--sh);letter-spacing:.6px;text-transform:uppercase;margin-bottom:10px}
@@ -206,125 +89,146 @@ a{color:inherit;text-decoration:none}
 .feature h3{font-size:17px;font-weight:600;margin-bottom:8px}
 .feature p{font-size:13px;color:var(--gr);line-height:1.7}
 
-/* SOCIAL PROOF */
-.proof{padding:48px 32px;text-align:center;background:var(--wh);border-top:1px solid var(--bd)}
+.proof{padding:48px 32px;text-align:center;border-top:1px solid var(--bd)}
 .proof-label{font-size:11px;color:var(--gr);letter-spacing:.6px;text-transform:uppercase;margin-bottom:24px}
-.logos{display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;opacity:.5}
+.logos{display:flex;justify-content:center;gap:48px;flex-wrap:wrap;opacity:.5}
 .fake-logo{font-size:18px;font-weight:700;color:var(--gr);font-style:italic}
 
-/* TESTIMONIAL */
-.quote-section{padding:72px 32px;text-align:center;background:var(--lt)}
-.quote{font-family:'Fraunces',serif;font-size:26px;font-weight:400;line-height:1.4;max-width:780px;margin:0 auto;letter-spacing:-.4px;font-style:italic}
-.quote-mark{color:var(--sh);font-size:42px;line-height:0}
-.quote-attr{margin-top:24px;font-size:13px;color:var(--gr)}
-.quote-attr strong{color:var(--dk);font-weight:600}
-
-/* CTA BLOCK */
 .cta-block{padding:80px 32px;text-align:center;background:var(--dk);color:#fff}
-.cta-block h2{font-family:'Fraunces',serif;font-size:38px;font-weight:400;color:#fff;margin-bottom:14px;letter-spacing:-.8px}
+.cta-block h2{font-family:'Fraunces',serif;font-size:38px;font-weight:400;color:#fff;margin-bottom:14px}
 .cta-block h2 em{font-style:italic;color:var(--sh)}
 .cta-block p{font-size:16px;color:#bbb;margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto}
 
-/* FAKE FOOTER */
-.fake-foot{padding:28px 32px;background:#0a0a0a;color:#888;font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid #222}
+footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid #222}
 
 /* ============ PRICING ============ */
-.pr-hero{padding:60px 32px 30px;text-align:center;background:var(--wh)}
+.pr-hero{padding:60px 32px 30px;text-align:center}
 .pr-hero h1{font-family:'Fraunces',serif;font-size:48px;font-weight:400;letter-spacing:-1.2px;line-height:1.05;margin-bottom:14px}
 .pr-hero h1 em{font-style:italic;color:var(--sh)}
 .pr-hero p{font-size:16px;color:var(--gr);max-width:600px;margin:0 auto;line-height:1.7}
 
-.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1140px;margin:48px auto 0;padding:0 32px}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:1100px;margin:48px auto 0;padding:0 32px}
 .plan{background:var(--wh);border:1px solid var(--bd);border-radius:14px;padding:28px 22px;position:relative;display:flex;flex-direction:column}
 .plan.popular{border-color:var(--sh);border-width:2px;padding:27px 21px;transform:translateY(-10px)}
 .plan-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--sh);color:#fff;font-size:10px;font-weight:700;padding:4px 12px;border-radius:20px;letter-spacing:.4px;text-transform:uppercase;white-space:nowrap}
-.plan-name{font-size:17px;font-weight:700;margin-bottom:3px}
-.plan-formerly{font-size:10px;color:var(--gr-lt);font-style:italic;margin-bottom:16px;text-transform:uppercase;letter-spacing:.4px}
-.plan-price{margin-bottom:16px;min-height:68px}
-.plan-starting{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--gr);margin-bottom:4px}
-.plan-amount{font-family:'Fraunces',serif;font-size:38px;font-weight:400;letter-spacing:-1px;line-height:1}
-.plan-amount .currency{font-size:22px;vertical-align:top;margin-right:2px}
-.plan-amount.coming{font-size:20px;font-weight:500;color:var(--gr);font-family:'DM Sans',sans-serif}
-.plan-period{font-size:12px;color:var(--gr);margin-top:4px}
-.plan-note{font-size:11px;color:var(--gr);font-style:italic;margin-top:4px;min-height:16px}
-.plan-cta{padding:11px 0;border-radius:7px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;border:1px solid var(--bd-dk);background:var(--wh);color:var(--dk);width:100%;margin-bottom:20px}
-.plan-cta:hover{border-color:var(--dk)}
-.plan-cta.primary{background:var(--sh);color:#fff;border-color:var(--sh)}
-.plan-cta.primary:hover{background:var(--sh-dk);border-color:var(--sh-dk)}
-.plan-tagline{font-size:13px;color:var(--gr);line-height:1.6;min-height:42px}
-
-/* Three-column pricing grid */
-.pricing-grid-3{grid-template-columns:repeat(3,1fr)}
 .plan-layer-tag{font-size:10px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--sh);margin-bottom:6px}
 .plan-name-new{font-size:20px;font-weight:700;margin-bottom:4px;letter-spacing:-.3px}
 .plan-desc{font-size:12px;color:var(--gr);margin-bottom:16px;line-height:1.5}
-.plan-merge-note{margin-top:16px;padding-top:14px;border-top:1px dashed var(--bd);font-size:11px;color:var(--gr-lt);line-height:1.5;font-style:italic}
-
-/* Billing toggle */
-.billing-toggle{margin-bottom:16px}
-.billing-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--gr);margin-bottom:8px}
-.billing-options{display:flex;gap:4px;background:var(--lt);padding:3px;border-radius:7px}
-.billing-opt{flex:1;padding:7px 8px;font-size:11px;font-weight:600;font-family:inherit;border:none;border-radius:5px;cursor:pointer;background:transparent;color:var(--gr);transition:all .15s;text-align:center}
-.billing-opt.active{background:var(--sh);color:#fff}
-.billing-opt:hover:not(.active){background:var(--bd)}
-
-/* 3-column feature rows */
-.feat-row-3{grid-template-columns:2.2fr repeat(3,1fr)}
+.plan-price{margin-bottom:16px;min-height:68px}
+.plan-amount{font-family:'Fraunces',serif;font-size:42px;font-weight:400;letter-spacing:-1px;line-height:1}
+.plan-amount .currency{font-size:24px;vertical-align:top;margin-right:2px}
+.plan-amount.coming{font-size:20px;font-weight:500;color:var(--gr);font-family:'DM Sans',sans-serif}
+.plan-period{font-size:12px;color:var(--gr);margin-top:4px}
+.plan-note{font-size:11px;color:var(--gr);font-style:italic;margin-top:4px}
+.plan-cta-btn{padding:12px 0;border-radius:8px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;border:1px solid var(--bd-dk);background:var(--wh);color:var(--dk);width:100%;margin-bottom:20px;transition:all .15s}
+.plan-cta-btn:hover{border-color:var(--dk)}
+.plan-cta-btn.primary{background:var(--sh);color:#fff;border-color:var(--sh);font-size:15px;padding:14px 0}
+.plan-cta-btn.primary:hover{background:var(--sh-dk)}
+.plan-cta-btn.free{background:var(--dk);color:#fff;border-color:var(--dk);font-size:15px;padding:14px 0}
+.plan-cta-btn.free:hover{background:#222}
+.plan-tagline{font-size:13px;color:var(--gr);line-height:1.6}
+.plan-includes{margin-top:20px;padding-top:18px;border-top:1px solid var(--bd)}
+.plan-includes-title{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gr);margin-bottom:10px}
+.plan-inc-item{font-size:13px;color:var(--dk);padding:5px 0;display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.plan-inc-item .chk{color:var(--sh);font-weight:700;font-size:14px;flex-shrink:0;margin-top:1px}
+.plan-inc-item.locked{color:var(--gr-lt)}
+.plan-inc-item.locked .chk{color:var(--bd-dk)}
 
 /* FEATURE TABLE */
-.feat-section{max-width:1140px;margin:60px auto 0;padding:0 32px}
+.feat-section{max-width:1100px;margin:60px auto 0;padding:0 32px}
 .feat-headers{margin-top:60px;margin-bottom:0}
-.feat-row-header{padding:16px 20px;border-top:none;border-bottom:2px solid var(--dk);background:var(--wh)}
-.feat-name-header{font-family:'Fraunces',serif;font-size:18px;font-weight:400;color:var(--dk);font-style:italic;letter-spacing:-.3px}
-.feat-col-header{font-size:13px;font-weight:700;color:var(--dk);text-transform:uppercase;letter-spacing:.4px}
-.feat-col-header-popular{color:var(--sh)}
-.feat-headers + .feat-section{margin-top:0}
-.feat-group-title{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--dk);padding:12px 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);background:var(--lt);padding-left:20px;padding-right:20px}
-.feat-row{display:grid;grid-template-columns:2.2fr repeat(4,1fr);padding:12px 20px;border-bottom:1px solid var(--bd);align-items:center;gap:14px}
+.feat-row{display:grid;grid-template-columns:2.2fr repeat(3,1fr);padding:12px 20px;border-bottom:1px solid var(--bd);align-items:center;gap:14px}
 .feat-row:last-child{border-bottom:none}
-.feat-name{font-size:13px;color:var(--dk);font-weight:500}
+.feat-row-header{padding:16px 20px;border-bottom:2px solid var(--dk)}
+.feat-name-header{font-family:'Fraunces',serif;font-size:18px;font-weight:400;font-style:italic}
+.feat-col-header{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;text-align:center}
+.feat-col-header-popular{color:var(--sh)}
+.feat-headers+.feat-section{margin-top:0}
+.feat-group-title{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;padding:12px 20px;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);background:var(--lt)}
+.feat-name{font-size:13px;font-weight:500}
 .feat-desc{font-size:11px;color:var(--gr);font-weight:400;margin-top:2px;display:block}
 .feat-cell{text-align:center;font-size:13px}
 .f-check{color:var(--sh);font-weight:700;font-size:16px}
 .f-cross{color:var(--bd-dk);font-size:14px}
-.f-text{font-size:10px;color:var(--gr);font-style:italic}
+.pr-foot-note{max-width:1100px;margin:40px auto 60px;padding:0 32px;font-size:12px;color:var(--gr);text-align:center}
 
-.pr-foot-note{max-width:1140px;margin:40px auto 60px;padding:0 32px;font-size:12px;color:var(--gr);text-align:center}
+/* ============ CONFIGURE ============ */
+.config-page{background:var(--lt);min-height:100vh;padding:60px 32px}
+.config-inner{max-width:640px;margin:0 auto}
+.config-header{text-align:center;margin-bottom:48px}
+.config-header h2{font-family:'Fraunces',serif;font-size:36px;font-weight:400;letter-spacing:-.8px;margin-bottom:10px}
+.config-header h2 em{font-style:italic;color:var(--sh)}
+.config-header p{font-size:15px;color:var(--gr);line-height:1.6}
+.config-step-label{font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--sh);margin-bottom:16px}
 
-/* ============ APP PAGE ============ */
-.app-page-bg{background:var(--lt);padding:50px 32px}
-.app-controls{max-width:880px;margin:0 auto 36px;background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:18px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.app-controls-label{font-size:12px;font-weight:600;color:var(--dk);text-transform:uppercase;letter-spacing:.4px}
+.config-card{background:var(--wh);border-radius:14px;border:1px solid var(--bd);padding:24px;margin-bottom:12px}
+.config-base{display:flex;justify-content:space-between;align-items:center}
+.config-base-left h3{font-size:16px;font-weight:600;margin-bottom:3px}
+.config-base-left p{font-size:13px;color:var(--gr)}
+.config-base-right{text-align:right}
+.config-base-price{font-family:'Fraunces',serif;font-size:32px;font-weight:400;color:var(--sh);letter-spacing:-1px}
+.config-base-note{font-size:11px;color:var(--gr)}
+
+.config-toggle-card{background:var(--wh);border-radius:14px;border:1px solid var(--bd);padding:20px 24px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;transition:all .2s;cursor:pointer}
+.config-toggle-card:hover{border-color:var(--sh)}
+.config-toggle-card.active{border-color:var(--sh);background:#fafffe}
+.config-toggle-left{display:flex;align-items:center;gap:14px}
+.config-toggle-icon{width:40px;height:40px;border-radius:10px;background:var(--lt);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;transition:background .2s}
+.config-toggle-card.active .config-toggle-icon{background:var(--sh-lt)}
+.config-toggle-title{font-size:14px;font-weight:600;margin-bottom:2px}
+.config-toggle-sub{font-size:12px;color:var(--gr)}
+.config-toggle-right{text-align:right;flex-shrink:0}
+.config-toggle-price{font-size:14px;font-weight:700;color:var(--dk)}
+.config-toggle-switch{width:44px;height:24px;border-radius:12px;background:var(--bd);position:relative;margin-top:6px;transition:background .2s;margin-left:auto}
+.config-toggle-card.active .config-toggle-switch{background:var(--sh)}
+.config-toggle-dot{width:18px;height:18px;border-radius:50%;background:#fff;position:absolute;top:3px;left:3px;transition:transform .2s;box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.config-toggle-card.active .config-toggle-dot{transform:translateX(20px)}
+
+.config-summary{background:var(--dk);border-radius:14px;padding:24px;color:#fff;margin-top:24px}
+.config-summary-row{display:flex;justify-content:space-between;align-items:center;padding:6px 0;font-size:13px}
+.config-summary-row.base{color:#aaa}
+.config-summary-row.addon{color:#aaa;font-size:12px}
+.config-summary-row.addon.active{color:#fff}
+.config-summary-divider{height:1px;background:#333;margin:10px 0}
+.config-summary-total{display:flex;justify-content:space-between;align-items:center;padding:8px 0}
+.config-summary-total .label{font-size:14px;font-weight:600}
+.config-summary-total .amount{font-family:'Fraunces',serif;font-size:28px;font-weight:400;color:var(--sh)}
+.config-summary-total .per{font-size:12px;color:#aaa;margin-top:2px;text-align:right}
+.config-summary-cta{width:100%;padding:14px;background:var(--sh);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:600;font-family:inherit;cursor:pointer;margin-top:16px;transition:opacity .15s}
+.config-summary-cta:hover{opacity:.9}
+
+.config-note{text-align:center;margin-top:20px;font-size:12px;color:var(--gr);line-height:1.6}
+
+/* ============ APP ============ */
+.app-page{background:var(--lt);min-height:100vh;padding:50px 0}
+.app-header-text{text-align:center;max-width:720px;margin:0 auto 40px;padding:0 32px}
+.app-header-text h2{font-family:'Fraunces',serif;font-size:32px;font-weight:400;letter-spacing:-.8px;margin-bottom:10px}
+.app-header-text h2 em{font-style:italic;color:var(--sh)}
+.app-header-text p{font-size:14px;color:var(--gr)}
+.app-controls{max-width:880px;margin:0 auto 32px;display:flex;align-items:center;gap:14px;justify-content:center;flex-wrap:wrap}
+.app-controls-label{font-size:12px;font-weight:600}
 .app-selector-pills{display:flex;gap:6px;flex-wrap:wrap}
 .app-pill{padding:8px 16px;font-size:12px;font-weight:500;border:1px solid var(--bd);background:var(--wh);border-radius:7px;cursor:pointer;font-family:inherit;transition:all .15s}
 .app-pill:hover{border-color:var(--sh)}
 .app-pill.active{background:var(--sh);color:#fff;border-color:var(--sh)}
-.app-controls-hint{font-size:12px;color:var(--gr);margin-left:auto}
-
 .app-frame{max-width:380px;margin:0 auto;background:#1a1a1a;border-radius:38px;padding:10px;box-shadow:0 20px 60px rgba(0,0,0,.18)}
-.app-screen{background:var(--wh);border-radius:30px;overflow:hidden;min-height:680px;position:relative}
+.app-screen{background:var(--wh);border-radius:30px;overflow:hidden;min-height:680px}
 .app-statusbar{padding:14px 24px 4px;display:flex;justify-content:space-between;font-size:11px;font-weight:600}
 .app-top{padding:14px 22px 18px;border-bottom:1px solid var(--bd)}
 .app-greeting{font-size:12px;color:var(--gr)}
 .app-name{font-size:20px;font-weight:700;letter-spacing:-.4px;margin-top:2px}
 .app-plan-pill{display:inline-flex;align-items:center;gap:6px;background:var(--sh-lt);color:var(--sh-dk);padding:4px 10px;border-radius:20px;font-size:10px;font-weight:600;margin-top:8px;text-transform:uppercase;letter-spacing:.3px}
 .app-plan-pill .dot{width:5px;height:5px;border-radius:50%;background:var(--sh)}
-
 .app-section{padding:18px 22px}
 .app-section-title{font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--gr);margin-bottom:12px}
 .app-tile-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .app-tile{background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:14px;position:relative;min-height:96px}
-.app-tile.locked{opacity:.5;background:var(--lt)}
-.app-tile.locked .lock-icon{position:absolute;top:10px;right:10px;font-size:11px;color:var(--gr-lt)}
 .app-tile-icon{width:28px;height:28px;border-radius:8px;background:var(--sh-lt);display:flex;align-items:center;justify-content:center;margin-bottom:8px;font-size:13px}
-.app-tile.locked .app-tile-icon{background:#eee}
 .app-tile-title{font-size:12px;font-weight:600;line-height:1.3;margin-bottom:2px}
-.app-tile-sub{font-size:10px;color:var(--gr);line-height:1.4}
+.app-tile-sub{font-size:10px;color:var(--gr)}
 .app-tile-cost-slot{position:absolute;bottom:10px;right:12px;font-size:10px;font-weight:700}
 .app-tile-cost{color:var(--sh-dk);background:var(--sh-lt);padding:2px 6px;border-radius:4px}
-.app-tile-included{color:var(--sh-dk);font-weight:600;background:transparent;padding:0}
-.app-tile-upsell{position:absolute;bottom:10px;right:12px;font-size:9px;color:var(--warn);font-weight:700;text-transform:uppercase;letter-spacing:.3px}
-
+.app-tile-included{color:var(--sh-dk);font-weight:600}
 .app-pot{background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:8px;position:relative}
 .app-pot-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .app-pot-name{font-size:12px;font-weight:600}
@@ -334,28 +238,17 @@ a{color:inherit;text-decoration:none}
 .app-pot.locked{opacity:.55;background:var(--lt)}
 .app-pot.locked .app-pot-amount{color:var(--gr);font-weight:500;font-style:italic;font-size:11px}
 .app-pot.locked .lock-icon{position:absolute;top:12px;right:14px;font-size:11px;color:var(--gr-lt)}
-
-.app-upgrade-card{background:linear-gradient(135deg,#0a0a0a 0%,#2a2a2a 100%);color:#fff;border-radius:12px;padding:16px;margin:18px 22px 28px}
+.app-upgrade-card{background:linear-gradient(135deg,#0a0a0a,#2a2a2a);color:#fff;border-radius:12px;padding:16px;margin:18px 22px 28px}
 .app-upgrade-card h4{font-size:13px;font-weight:700;margin-bottom:5px}
 .app-upgrade-card p{font-size:11px;color:#bbb;line-height:1.5;margin-bottom:10px}
 .app-upgrade-btn{background:var(--sh);color:#fff;border:none;padding:8px 14px;border-radius:6px;font-size:11px;font-weight:600;font-family:inherit;cursor:pointer}
 
 @media(max-width:900px){
-  .pricing-grid{grid-template-columns:1fr 1fr;gap:20px}
-  .pricing-grid-3{grid-template-columns:1fr}
-  .plan.popular{transform:none}
-  .hero-inner{grid-template-columns:1fr}
-  .hero-visual{display:none}
+  .pricing-grid{grid-template-columns:1fr}.plan.popular{transform:none}
+  .hero-inner{grid-template-columns:1fr}.hero-visual{display:none}
   .features-grid{grid-template-columns:1fr}
-  .stats-grid{grid-template-columns:1fr 1fr;gap:24px}
-  .commentary-grid{grid-template-columns:1fr;gap:20px}
-  .commentary h2{font-size:30px}
-  .hero h1{font-size:36px}
-  .feat-row{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;font-size:11px;padding:10px 12px}
-  .pr-hero h1{font-size:32px}
-  .stat-callout{flex-direction:column;text-align:center;gap:12px}
-  .progression-grid{grid-template-columns:1fr;gap:8px}
-  .prog-arrow{transform:rotate(90deg);padding:4px 0}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:36px}.pr-hero h1{font-size:32px}
 }
 </style>
 </head>
@@ -365,7 +258,7 @@ a{color:inherit;text-decoration:none}
 <div id="gate">
   <div class="gate-box">
     <div class="gate-logo">Simplyhealth</div>
-    <div class="gate-sub">Corporate proposition concept — enter password to continue</div>
+    <div class="gate-sub">Prototype — enter password to continue</div>
     <input type="password" class="gate-input" id="pw" placeholder="Password" autofocus>
     <button class="gate-btn" id="go">Continue</button>
     <div class="gate-err" id="err"></div>
@@ -375,692 +268,550 @@ a{color:inherit;text-decoration:none}
 <!-- MAIN CONTENT -->
 <div id="main" style="display:none">
 
-<!-- PROTOTYPE TOP BAR -->
-<div class="proto-bar">
-  <div class="proto-bar-left">
-    <span class="proto-tag">CONCEPT</span>
-    <span class="proto-title">Simplyhealth — corporate proposition</span>
-    <span class="proto-author">by Paul Connor, Head of Product</span>
+<nav class="nav"><div class="nav-inner">
+  <div class="logo" onclick="goTo('home')"><div class="logo-mark">S</div><span>Simplyhealth</span><span style="font-size:10px;font-weight:700;background:#ffeb3b;color:#000;padding:2px 8px;border-radius:4px;margin-left:10px;letter-spacing:.5px">PROTOTYPE</span></div>
+  <div class="nav-links">
+    <div class="nav-link active" data-page="home">Home</div>
+    <div class="nav-link" data-page="pricing">Plans</div>
+    <div class="nav-link" data-page="config">Configure</div>
+    <div class="nav-link" data-page="app">App experience</div>
+    <div class="nav-cta" onclick="goTo('pricing')">Get started →</div>
   </div>
-  <div class="proto-step-nav">
-    <div class="proto-step active" data-step="home">1. Homepage</div>
-    <div class="proto-step" data-step="pricing">2. Plans &amp; pricing</div>
-    <div class="proto-step" data-step="app">3. Employee experience</div>
-  </div>
-</div>
+</div></nav>
 
-<!-- ========== STEP 1: HOMEPAGE ========== -->
+<!-- ============ HOME ============ -->
 <div class="page active" id="page-home">
-
-  <!-- COMMENTARY -->
-  <div class="commentary">
-    <div class="commentary-inner">
-      <div class="commentary-step">Step 1 of 3 · The homepage</div>
-      <h2>What if simplyhealth.co.uk had <em>one clear value proposition</em>?</h2>
-      <p class="commentary-lead">Today the website tries to serve three audiences at once — Personal, Businesses, and Intermediaries. When a new visitor lands on the homepage, they have to work out who we're for before they can work out what we do.</p>
-
-      <div class="stat-callout">
-        <div class="stat-callout-big">47 seconds</div>
-        <div class="stat-callout-text">The average attention span of a website visitor in 2024. <strong>57% of visitors never scroll past the hero fold.</strong> What they see on landing decides whether they stay.<sup>*</sup></div>
-      </div>
-
-      <div class="from-this">
-        <div class="ba-label ba-label-before">From this</div>
-        <div class="ba-img-wrap current-mock">
-          <div class="cm-tabs">
-            <div class="cm-tab cm-tab-active">
-              <div class="cm-tab-icon">●</div>
-              Personal
-            </div>
-            <div class="cm-tab">
-              <div class="cm-tab-icon">●</div>
-              Businesses
-            </div>
-            <div class="cm-tab">
-              <div class="cm-tab-icon">●</div>
-              Intermediaries
-            </div>
-            <div class="cm-tab-spacer"></div>
-            <div class="cm-tab-link">About us</div>
-            <div class="cm-tab-link">Help</div>
-            <div class="cm-tab-link">Contact</div>
-            <div class="cm-account">My account</div>
-          </div>
-          <div class="cm-body">
-            <div class="cm-logo">
-              <div class="logo-mark">S</div>
-              <span>Simplyhealth</span>
-            </div>
-            <div class="cm-nav-right">
-              <span>Health plans ▾</span>
-              <span>Dental plans</span>
-              <span>Healthy living guides ▾</span>
-            </div>
-            <div class="cm-hero">
-              <div class="cm-hero-text">
-                <h3>A simple way to get healthy</h3>
-                <p>Health cover on your terms.<br>From only £23 a month.</p>
-                <div class="cm-cta">Get a health plan →</div>
-              </div>
-              <div class="cm-hero-portrait">😊</div>
-            </div>
-            <div class="cm-confused">
-              <div class="cm-confused-tag">??</div>
-              <div class="cm-confused-text">Wait — am I a person, a business, or a broker? And what do you actually sell?</div>
-            </div>
-          </div>
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">For UK employers</div>
+        <h1>Healthcare your people will <em>actually use</em>.</h1>
+        <p class="hero-sub">Give your team access to a curated network of healthcare services through one app. No commitment needed to get started.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary btn-lg" onclick="goTo('pricing')">Get started <span class="btn-arrow">→</span></button>
+          <button class="btn btn-secondary" onclick="goTo('pricing')">See all plans</button>
         </div>
-        <div class="ba-caption">Three audiences, three tabs, three different messages. Which one is the user? What do we actually do?</div>
       </div>
-
-      <div class="to-this-arrow">
-        <div class="ba-label ba-label-after">To this ↓</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PROTOTYPE -->
-  <div class="proto-frame">
-    <div class="proto-frame-inner">
-      <div class="proto-frame-label"></div>
-      <div class="proto-canvas">
-        <div class="browser">
-          <div class="browser-dots"><div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div></div>
-          <div class="browser-url">simplyhealth.co.uk</div>
+      <div class="hero-visual">
+        <div class="hero-card hero-card-1">
+          <div class="hc-icon">👨‍⚕️</div>
+          <div class="hc-title">Book a GP</div>
+          <div class="hc-sub">Video or phone, 12 min wait</div>
+          <div class="hc-price">£49 self-pay</div>
         </div>
-
-        <nav class="mk-nav">
-          <div class="logo">
-            <div class="logo-mark">S</div>
-            <span>Simplyhealth</span>
-          </div>
-          <div class="mk-nav-links">
-            <div class="mk-nav-link" onclick="goTo('pricing')">Plans &amp; pricing</div>
-            <a class="mk-nav-cta" onclick="goTo('pricing')">Get a quote →</a>
-          </div>
-        </nav>
-
-        <section class="hero">
-          <div class="hero-inner">
-            <div>
-              <div class="hero-eyebrow">For UK employers</div>
-              <h1>Healthcare your people will <em>actually use</em>.</h1>
-              <p class="hero-sub">Give your team real access to the healthcare they need — in the moment they need it, through one app they'll actually open. Start for free.</p>
-              <div class="hero-ctas">
-                <button class="btn btn-primary" onclick="goTo('pricing')">See plans &amp; pricing <span class="btn-arrow">→</span></button>
-                <button class="btn btn-secondary">Book a demo</button>
-              </div>
-            </div>
-            <div class="hero-visual">
-              <div class="hero-card hero-card-1">
-                <div class="hc-icon">👨‍⚕️</div>
-                <div class="hc-title">24/7 GP access</div>
-                <div class="hc-sub">Average wait: 12 mins</div>
-                <div class="hc-metric"><span class="hc-num">94%</span><span class="hc-unit">satisfaction</span></div>
-              </div>
-              <div class="hero-card hero-card-2">
-                <div class="hc-icon">💚</div>
-                <div class="hc-title">Mental health</div>
-                <div class="hc-sub">24/7 counselling, no waiting lists</div>
-              </div>
-              <div class="hero-card hero-card-3">
-                <div class="hc-icon">💷</div>
-                <div class="hc-title">Claim-back in 3 days</div>
-                <div class="hc-sub">Dental, optical, physio &amp; more</div>
-                <div class="hc-metric"><span class="hc-num">£327</span><span class="hc-unit">avg annual claim</span></div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="stats">
-          <div class="stats-grid">
-            <div class="stat"><div class="stat-num">1M+</div><div class="stat-lbl">People covered across the UK</div></div>
-            <div class="stat"><div class="stat-num">150+</div><div class="stat-lbl">Years of UK healthcare heritage</div></div>
-            <div class="stat"><div class="stat-num">3 days</div><div class="stat-lbl">Average claim turnaround</div></div>
-            <div class="stat"><div class="stat-num">£26</div><div class="stat-lbl">Saved per GP appointment vs in-person</div></div>
-          </div>
-        </section>
-
-        <section class="mk-section alt">
-          <div class="mk-section-inner">
-            <div class="mk-section-head">
-              <div class="mk-eyebrow">One product, grown with you</div>
-              <h2>Start with what you can afford.<br>Scale when you're <em>ready</em>.</h2>
-              <p class="mk-section-sub">No separate apps, no product rebrands, no switching costs. Your people get one experience — you choose how much to unlock for them.</p>
-            </div>
-            <div class="features-grid">
-              <div class="feature">
-                <div class="feature-icon">🚀</div>
-                <h3>Start free</h3>
-                <p>Give your people access to our care network at no cost to you. Employees pay for what they use, at rates they can't get on their own.</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon">📈</div>
-                <h3>Grow at your pace</h3>
-                <p>Unlock 24/7 GP, mental health, and MSK care from £3 per employee per month. Add claim-back cover when you're ready.</p>
-              </div>
-              <div class="feature">
-                <div class="feature-icon">🤝</div>
-                <h3>One relationship</h3>
-                <p>One provider, one app, one admin process. Whether you pay nothing or £4+ per employee, your people get the same branded experience.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="proof">
-          <div class="proof-label">Trusted by UK businesses of every size</div>
-          <div class="logos">
-            <div class="fake-logo">RiverBank</div>
-            <div class="fake-logo">Northwind</div>
-            <div class="fake-logo">Meadow&amp;Co</div>
-            <div class="fake-logo">Brightside</div>
-            <div class="fake-logo">Ferngrove</div>
-          </div>
-        </section>
-
-        <section class="quote-section">
-          <div class="quote"><span class="quote-mark">"</span>We went from a benefit nobody used to one where engagement hit 78% in four months. The difference was giving our whole workforce access — not just the senior team.</div>
-          <div class="quote-attr"><strong>Joanne Stainby</strong> — Head of HR, Battersea Dogs &amp; Cats Home</div>
-        </section>
-
-        <section class="cta-block">
-          <h2>Ready to give your people<br>healthcare that <em>actually works</em>?</h2>
-          <p>See plans starting from £0, compare what's included, and get a tailored quote in minutes.</p>
-          <button class="btn btn-primary" style="font-size:15px;padding:14px 28px" onclick="goTo('pricing')">See plans &amp; pricing <span class="btn-arrow">→</span></button>
-        </section>
-
-        <div class="fake-foot">
-          <div>© 2026 Simplyhealth</div>
-          <div>Privacy · Terms · Contact</div>
+        <div class="hero-card hero-card-2">
+          <div class="hc-icon">💚</div>
+          <div class="hc-title">Mental health</div>
+          <div class="hc-sub">24/7 counselling</div>
+          <div class="hc-price">£65 self-pay</div>
+        </div>
+        <div class="hero-card hero-card-3">
+          <div class="hc-icon">🦴</div>
+          <div class="hc-title">MSK assessment</div>
+          <div class="hc-sub">Muscle and joint pain</div>
+          <div class="hc-price">£38 self-pay</div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- POST-PROTOTYPE COMMENTARY -->
-  <div class="post-commentary">
-    <div class="commentary-inner">
-      <div class="commentary-grid">
-        <div class="commentary-block">
-          <h4>Why corporate-only</h4>
-          <p>Our largest revenue channel is and will continue to be employer-paid. <strong>The vast majority of our revenue growth comes from corporate sales.</strong> Most product-led companies have a singular audience and message — and the data shows we lose a meaningful portion of visitors at the homepage because we're not focused enough on what we're really selling.</p>
-        </div>
-        <div class="commentary-block">
-          <h4>What changes</h4>
-          <p>No "for personal / for business / for intermediaries" tabs. No three-way navigation tax. <strong>This is Simplyhealth, this is what it does, this is who it's for.</strong> A focused message aimed squarely at corporates buying healthcare for their employees. Brokers and intermediaries become a distribution channel, not a separate audience.</p>
-        </div>
-      </div>
-      <div class="footnote">* Source: Sender 2024 landing page statistics; Wix / eye-tracking studies on hero-fold engagement.</div>
+  <section class="stats"><div class="stats-grid">
+    <div class="stat"><div class="stat-num">1M+</div><div class="stat-lbl">People covered</div></div>
+    <div class="stat"><div class="stat-num">150+</div><div class="stat-lbl">Years of heritage</div></div>
+    <div class="stat"><div class="stat-num">3 days</div><div class="stat-lbl">Avg claim turnaround</div></div>
+    <div class="stat"><div class="stat-num">£26</div><div class="stat-lbl">Saved per GP vs NHS</div></div>
+  </div></section>
+
+  <section class="mk-section alt"><div class="mk-section-inner">
+    <div class="mk-section-head">
+      <div class="mk-eyebrow">One product, grown with you</div>
+      <h2>Start with what you can afford.<br>Scale when you're <em>ready</em>.</h2>
+      <p class="mk-section-sub">No separate apps, no product rebrands, no switching costs. Your people get one experience. You choose how much to unlock.</p>
     </div>
-  </div>
+    <div class="features-grid">
+      <div class="feature"><div class="feature-icon">🌐</div><h3>Access a curated network</h3><p>Your people get access to GP, physio, mental health, diagnostic scans and more through our partner network, at exclusive membership rates.</p></div>
+      <div class="feature"><div class="feature-icon">📱</div><h3>One app, one experience</h3><p>Whether you pay nothing or fund the full package, your employees see the same app, the same brand, and the same quality of care.</p></div>
+      <div class="feature"><div class="feature-icon">📈</div><h3>Upgrade on your terms</h3><p>Add claim-back cover for dental, optical and physio when you're ready. No re-onboarding, no switching, no disruption.</p></div>
+    </div>
+  </div></section>
+
+  <section class="proof">
+    <div class="proof-label">Trusted by UK businesses of every size</div>
+    <div class="logos"><div class="fake-logo">RiverBank</div><div class="fake-logo">Northwind</div><div class="fake-logo">Meadow&Co</div><div class="fake-logo">Brightside</div><div class="fake-logo">Ferngrove</div></div>
+  </section>
+
+  <section class="cta-block">
+    <h2>Give your people healthcare<br>they'll <em>actually use</em>.</h2>
+    <p>Access our curated healthcare network at no upfront cost. Upgrade whenever you're ready.</p>
+    <button class="btn btn-primary btn-lg" onclick="goTo('pricing')">Get started <span class="btn-arrow">→</span></button>
+  </section>
+  <footer><div>© 2026 Simplyhealth</div><div>Privacy · Terms · Contact</div></footer>
 </div>
 
-<!-- ========== STEP 2: PRICING ========== -->
+<!-- ============ PRICING ============ -->
 <div class="page" id="page-pricing">
+  <section class="pr-hero">
+    <h1>Choose your <em>plan</em>.</h1>
+    <p>Start with free access to our care network. Add services, add cover, scale up when you're ready.</p>
+  </section>
 
-  <div class="commentary">
-    <div class="commentary-inner">
-      <div class="commentary-step">Step 2 of 3 · Plans &amp; pricing</div>
-      <h2>Three layers. Each one <em>builds on the last</em>.</h2>
-      <p class="commentary-lead">We don't have four products. We have three layers of healthcare access. <strong>Digital Services</strong> at the base — whether the employer pays (old Essentials) or the employee pays per use (old On-Demand) is a billing decision, not a product decision. <strong>Cashplan</strong> adds claim-back cover. <strong>PMI</strong> adds private medical. Each layer stacks on the previous one.</p>
+  <div class="pricing-grid">
+    <div class="plan">
+      <div class="plan-name-new">Digital Services</div>
+      <div class="plan-desc">Give your employees access to our curated healthcare network. GP, mental health, MSK, diagnostic scans, neurodiversity assessments and more, all at exclusive membership rates.</div>
+      <div class="plan-price">
+        <div class="plan-amount" style="font-size:28px;letter-spacing:-.5px;color:var(--sh)">Free</div>
+        <div class="plan-period">to the employer</div>
+        <div class="plan-note">Employees access services at discounted member rates</div>
+      </div>
+      <button class="plan-cta-btn free" onclick="goTo('config')">Get started →</button>
+      <div class="plan-tagline">Your people join as Simplyhealth members and get immediate access to discounted healthcare across our network. You can then choose to cover specific services for them, building a subscription.</div>
+      <div class="plan-includes">
+        <div class="plan-includes-title">Network services</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>GP consultations</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Mental health counselling</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>MSK assessments</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Diagnostic scans</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Neurodiversity assessments</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Menopause and parental coaching</div>
+      </div>
+    </div>
+
+    <div class="plan popular">
+      <div class="plan-badge">Most popular</div>
+      <div class="plan-name-new">Cash Plan</div>
+      <div class="plan-desc">All digital services included for your employees, plus claim-back pots for dental, optical, physio and more.</div>
+      <div class="plan-price">
+        <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--gr);margin-bottom:4px">Starting from</div>
+        <div class="plan-amount"><span class="currency">£</span>3.99</div>
+        <div class="plan-period">per employee / month</div>
+        <div class="plan-note">Flexible benefit limits</div>
+      </div>
+      <button class="plan-cta-btn primary" onclick="goTo('quote')">Get a quote</button>
+      <div class="plan-tagline">The most complete everyday healthcare package. Every digital service included at no extra cost to the employee, plus cash-back on real-world treatment costs.</div>
+      <div class="plan-includes">
+        <div class="plan-includes-title">Everything in Digital Services, plus</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>All digital services included (no self-pay)</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Dental claim-back</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Optical claim-back</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Physio and chiropractic</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Diagnostics and prescriptions</div>
+      </div>
+    </div>
+
+    <div class="plan">
+      <div class="plan-name-new">PMI</div>
+      <div class="plan-desc">Everything in Cash Plan, plus private medical insurance.</div>
+      <div class="plan-price">
+        <div class="plan-amount coming">Coming soon</div>
+        <div class="plan-period">Premium tier</div>
+        <div class="plan-note">The complete package</div>
+      </div>
+      <button class="plan-cta-btn">Register interest</button>
+      <div class="plan-tagline">Day-to-day healthcare, cash-back cover, and private medical insurance. One provider for everything.</div>
+      <div class="plan-includes">
+        <div class="plan-includes-title">Everything in Cash Plan, plus</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Private hospital treatment</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Specialist referrals</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Surgery and recovery</div>
+        <div class="plan-inc-item"><span class="chk">✓</span>Cancer treatment</div>
+      </div>
     </div>
   </div>
 
-  <div class="proto-frame">
-    <div class="proto-frame-inner">
-      <div class="proto-frame-label"></div>
-      <div class="proto-canvas">
-        <div class="browser">
-          <div class="browser-dots"><div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div></div>
-          <div class="browser-url">simplyhealth.co.uk/pricing</div>
-        </div>
+  <!-- Comparison table -->
+  <div class="feat-section feat-headers">
+    <div class="feat-row feat-row-header">
+      <div class="feat-name feat-name-header">Compare plans</div>
+      <div class="feat-cell feat-col-header">Digital Services</div>
+      <div class="feat-cell feat-col-header feat-col-header-popular">Cash Plan</div>
+      <div class="feat-cell feat-col-header">PMI</div>
+    </div>
+  </div>
+  <div class="feat-section">
+    <div class="feat-group-title">Healthcare network</div>
+    <div class="feat-row"><div class="feat-name">Discounted network access<span class="feat-desc">GP, physio, scans, therapy, neurodiversity, menopause coaching</span></div><div class="feat-cell"><span class="f-check">✓</span></div><div class="feat-cell"><span class="f-check">✓</span></div><div class="feat-cell"><span class="f-check">✓</span></div></div>
+  </div>
+  <div class="feat-section" style="margin-top:32px">
+    <div class="feat-group-title">Digital health services</div>
+    <div class="feat-row"><div class="feat-name">24/7 GP and nurse</div><div class="feat-cell" style="font-size:11px;color:var(--gr)">Self-pay</div><div class="feat-cell"><span class="f-check">✓</span></div><div class="feat-cell"><span class="f-check">✓</span></div></div>
+    <div class="feat-row"><div class="feat-name">Mental health counselling</div><div class="feat-cell" style="font-size:11px;color:var(--gr)">Self-pay</div><div class="feat-cell"><span class="f-check">✓</span></div><div class="feat-cell"><span class="f-check">✓</span></div></div>
+    <div class="feat-row"><div class="feat-name">MSK / physio assessments</div><div class="feat-cell" style="font-size:11px;color:var(--gr)">Self-pay</div><div class="feat-cell"><span class="f-check">✓</span></div><div class="feat-cell"><span class="f-check">✓</span></div></div>
+  </div>
+  <div class="feat-section" style="margin-top:32px">
+    <div class="feat-group-title">Claim-back pots</div>
+    <div class="feat-row"><div class="feat-name">Dental, optical, physio cash-back</div><div class="feat-cell"><span class="f-cross">-</span></div><div class="feat-cell"><span class="f-check">✓</span></div><div class="feat-cell"><span class="f-check">✓</span></div></div>
+    <div class="feat-row"><div class="feat-name">Diagnostics and prescriptions</div><div class="feat-cell"><span class="f-cross">-</span></div><div class="feat-cell"><span class="f-check">✓</span></div><div class="feat-cell"><span class="f-check">✓</span></div></div>
+  </div>
+  <div class="feat-section" style="margin-top:32px">
+    <div class="feat-group-title">Private medical insurance</div>
+    <div class="feat-row"><div class="feat-name">Hospital, surgery, cancer treatment</div><div class="feat-cell"><span class="f-cross">-</span></div><div class="feat-cell"><span class="f-cross">-</span></div><div class="feat-cell"><span class="f-check">✓</span></div></div>
+  </div>
 
-        <nav class="mk-nav">
-          <div class="logo">
-            <div class="logo-mark">S</div>
-            <span>Simplyhealth</span>
+  <div class="pr-foot-note">All plans: pre-existing conditions covered, no age limits, single app, whole-workforce coverage</div>
+  <footer><div>© 2026 Simplyhealth</div><div>Privacy · Terms · Contact</div></footer>
+</div>
+
+<!-- ============ CONFIGURE ============ -->
+<div class="page" id="page-config">
+  <div class="config-page">
+    <div class="config-inner">
+      <div class="config-header">
+        <h2>Set up <em>your plan</em></h2>
+        <p>Choose what you want to cover for your employees. Everything starts with access to our healthcare network.</p>
+      </div>
+
+      <div class="config-step-label">Your healthcare network</div>
+      <div class="config-card" style="padding:28px;background:linear-gradient(135deg,var(--sh-lt),#d4f3f0);border-color:#b2ebe7">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px">
+          <div style="width:48px;height:48px;border-radius:12px;background:var(--sh);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0">🌐</div>
+          <div>
+            <h3 style="font-size:18px;font-weight:700;color:var(--sh-dk);margin-bottom:2px">Healthcare network access</h3>
+            <div style="font-size:12px;color:var(--sh-dk);font-weight:600">Included with every plan</div>
           </div>
-          <div class="mk-nav-links">
-            <div class="mk-nav-link">Plans &amp; pricing</div>
-            <a class="mk-nav-cta">Get a quote →</a>
-          </div>
-        </nav>
-
-        <section class="pr-hero">
-          <h1>Three layers. Each one <em>builds on the last</em>.</h1>
-          <p>One product, one app, one relationship. Choose how much healthcare to unlock for your people — and scale up whenever you're ready.</p>
-        </section>
-
-        <div class="pricing-grid pricing-grid-3">
-          <div class="plan">
-            <div class="plan-layer-tag">Layer 1</div>
-            <div class="plan-name-new">Digital Services</div>
-            <div class="plan-desc">GP, mental health, MSK, care network access</div>
-            <div class="billing-toggle">
-              <div class="billing-label">Who pays?</div>
-              <div class="billing-options">
-                <button class="billing-opt active" data-billing="employer">Employer pays</button>
-                <button class="billing-opt" data-billing="employee">Employee self-pay</button>
-              </div>
-            </div>
-            <div class="plan-price" id="ds-price">
-              <div class="plan-starting">Starting from</div>
-              <div class="plan-amount"><span class="currency">£</span>2</div>
-              <div class="plan-period" id="ds-period">per employee / month</div>
-              <div class="plan-note" id="ds-note">Employer pays from £2/month — employee gets services included</div>
-            </div>
-            <button class="plan-cta">Get started</button>
-            <div class="plan-tagline" id="ds-tagline">24/7 digital healthcare included for every employee, plus access to our discounted care network.</div>
-            <div class="plan-merge-note">This layer replaces both On-Demand and Essentials — same service, different billing.</div>
-          </div>
-
-          <div class="plan popular">
-            <div class="plan-badge">Most popular</div>
-            <div class="plan-layer-tag">Layer 2</div>
-            <div class="plan-name-new">Cashplan</div>
-            <div class="plan-desc">Digital Services + Cash plan cover</div>
-            <div class="plan-price">
-              <div class="plan-starting">Starting from</div>
-              <div class="plan-amount"><span class="currency">£</span>3.99</div>
-              <div class="plan-period">per employee / month</div>
-              <div class="plan-note">Flexible benefit limits</div>
-            </div>
-            <button class="plan-cta primary">Get a quote</button>
-            <div class="plan-tagline">Everything in Digital Services, plus claim-back pots for dental, optical, physio, diagnostics and more.</div>
-          </div>
-
-          <div class="plan">
-            <div class="plan-layer-tag">Layer 3</div>
-            <div class="plan-name-new">PMI</div>
-            <div class="plan-desc">Digital Services + Cash plan + Private medical</div>
-            <div class="plan-price">
-              <div class="plan-amount coming">Coming soon</div>
-              <div class="plan-period">Premium tier</div>
-              <div class="plan-note">The complete package</div>
-            </div>
-            <button class="plan-cta">Register interest</button>
-            <div class="plan-tagline">Everything in Cashplan, plus private hospital treatment, specialist referrals, surgery and cancer cover.</div>
+          <div style="margin-left:auto;text-align:right">
+            <div style="font-family:'Fraunces',serif;font-size:32px;font-weight:400;color:var(--sh-dk);letter-spacing:-1px">Free</div>
           </div>
         </div>
-
-        <!-- Feature table -->
-        <div class="feat-section feat-headers">
-          <div class="feat-row feat-row-header feat-row-3">
-            <div class="feat-name feat-name-header">Compare what's included</div>
-            <div class="feat-cell feat-col-header">Digital Services</div>
-            <div class="feat-cell feat-col-header feat-col-header-popular">Cashplan</div>
-            <div class="feat-cell feat-col-header">PMI</div>
+        <p style="font-size:13px;color:#1a5f58;line-height:1.6;margin-bottom:16px">Your employees become Simplyhealth members and get access to our curated partner network at exclusive discounted rates. They can book and pay for services directly through the app.</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px">
+          <div style="background:rgba(255,255,255,.6);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-size:16px;margin-bottom:4px">👨‍⚕️</div>
+            <div style="font-size:11px;font-weight:600;color:var(--sh-dk)">GP</div>
+            <div style="font-size:10px;color:#1a5f58">employees pay £49</div>
           </div>
-        </div>
-
-        <div class="feat-section">
-          <div class="feat-group-title">Care network</div>
-          <div class="feat-row feat-row-3">
-            <div class="feat-name">Discounted self-pay services
-              <span class="feat-desc">Physio, scans, therapy, eyecare, neurodiversity assessments</span>
-            </div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
+          <div style="background:rgba(255,255,255,.6);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-size:16px;margin-bottom:4px">💚</div>
+            <div style="font-size:11px;font-weight:600;color:var(--sh-dk)">Mental health</div>
+            <div style="font-size:10px;color:#1a5f58">employees pay £65</div>
           </div>
-        </div>
-
-        <div class="feat-section" style="margin-top:32px">
-          <div class="feat-group-title">Digital health services</div>
-          <div class="feat-row feat-row-3">
-            <div class="feat-name">24/7 GP &amp; nurse appointments</div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
+          <div style="background:rgba(255,255,255,.6);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-size:16px;margin-bottom:4px">🦴</div>
+            <div style="font-size:11px;font-weight:600;color:var(--sh-dk)">MSK</div>
+            <div style="font-size:10px;color:#1a5f58">employees pay £38</div>
           </div>
-          <div class="feat-row feat-row-3">
-            <div class="feat-name">Mental health counselling</div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
+          <div style="background:rgba(255,255,255,.6);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-size:16px;margin-bottom:4px">🔬</div>
+            <div style="font-size:11px;font-weight:600;color:var(--sh-dk)">Scans</div>
+            <div style="font-size:10px;color:#1a5f58">employees pay £95</div>
           </div>
-          <div class="feat-row feat-row-3">
-            <div class="feat-name">MSK / physio digital assessments</div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
+          <div style="background:rgba(255,255,255,.6);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-size:16px;margin-bottom:4px">🧠</div>
+            <div style="font-size:11px;font-weight:600;color:var(--sh-dk)">Neurodiversity</div>
+            <div style="font-size:10px;color:#1a5f58">assessments</div>
           </div>
-        </div>
-
-        <div class="feat-section" style="margin-top:32px">
-          <div class="feat-group-title">Claim-back pots (cash plan)</div>
-          <div class="feat-row feat-row-3">
-            <div class="feat-name">Dental, optical, physio cash-back
-              <span class="feat-desc">In-person treatment cost cover, up to annual limits</span>
-            </div>
-            <div class="feat-cell"><span class="f-cross">—</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
+          <div style="background:rgba(255,255,255,.6);border-radius:8px;padding:10px;text-align:center">
+            <div style="font-size:16px;margin-bottom:4px">🌸</div>
+            <div style="font-size:11px;font-weight:600;color:var(--sh-dk)">Menopause</div>
+            <div style="font-size:10px;color:#1a5f58">coaching</div>
           </div>
-          <div class="feat-row feat-row-3">
-            <div class="feat-name">Diagnostics &amp; prescriptions</div>
-            <div class="feat-cell"><span class="f-cross">—</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-          </div>
-        </div>
-
-        <div class="feat-section" style="margin-top:32px">
-          <div class="feat-group-title">Private medical insurance</div>
-          <div class="feat-row feat-row-3">
-            <div class="feat-name">Hospital, surgery, cancer treatment
-              <span class="feat-desc">Specialist referrals, private hospital network</span>
-            </div>
-            <div class="feat-cell"><span class="f-cross">—</span></div>
-            <div class="feat-cell"><span class="f-cross">—</span></div>
-            <div class="feat-cell"><span class="f-check">✓</span></div>
-          </div>
-        </div>
-
-        <div class="pr-foot-note">All layers · Pre-existing conditions covered · No age limits · Single app · Whole-workforce coverage</div>
-
-        <div class="fake-foot">
-          <div>© 2026 Simplyhealth</div>
-          <div>Privacy · Terms · Contact</div>
         </div>
       </div>
+
+      <div class="config-step-label" style="margin-top:32px">Cover network services for your employees</div>
+      <p style="font-size:13px;color:var(--gr);margin-bottom:16px;line-height:1.6">Toggle on to include these services as part of your employees' plan at no cost to them. Anything left off remains available at self-pay rates.</p>
+
+      <div class="config-toggle-card" data-addon="gp" data-price="0.80">
+        <div class="config-toggle-left">
+          <div class="config-toggle-icon">👨‍⚕️</div>
+          <div>
+            <div class="config-toggle-title">Cover GP consultations</div>
+            <div class="config-toggle-sub">24/7 video and phone GP access, included for every employee</div>
+          </div>
+        </div>
+        <div class="config-toggle-right">
+          <div class="config-toggle-price">+ £0.80 /emp/mo</div>
+          <div class="config-toggle-switch"><div class="config-toggle-dot"></div></div>
+        </div>
+      </div>
+
+      <div class="config-toggle-card" data-addon="mental" data-price="0.60">
+        <div class="config-toggle-left">
+          <div class="config-toggle-icon">💚</div>
+          <div>
+            <div class="config-toggle-title">Cover mental health counselling</div>
+            <div class="config-toggle-sub">Qualified counsellors, immediate access, no waiting lists</div>
+          </div>
+        </div>
+        <div class="config-toggle-right">
+          <div class="config-toggle-price">+ £0.60 /emp/mo</div>
+          <div class="config-toggle-switch"><div class="config-toggle-dot"></div></div>
+        </div>
+      </div>
+
+      <div class="config-toggle-card" data-addon="msk" data-price="0.40">
+        <div class="config-toggle-left">
+          <div class="config-toggle-icon">🦴</div>
+          <div>
+            <div class="config-toggle-title">Cover MSK assessments</div>
+            <div class="config-toggle-sub">Online muscle and joint pain support and triage</div>
+          </div>
+        </div>
+        <div class="config-toggle-right">
+          <div class="config-toggle-price">+ £0.40 /emp/mo</div>
+          <div class="config-toggle-switch"><div class="config-toggle-dot"></div></div>
+        </div>
+      </div>
+
+      <div class="config-toggle-card" data-addon="gym" data-price="0.20">
+        <div class="config-toggle-left">
+          <div class="config-toggle-icon">🏋️</div>
+          <div>
+            <div class="config-toggle-title">Cover gym and lifestyle discounts</div>
+            <div class="config-toggle-sub">3,000+ UK venues at reduced rates</div>
+          </div>
+        </div>
+        <div class="config-toggle-right">
+          <div class="config-toggle-price">+ £0.20 /emp/mo</div>
+          <div class="config-toggle-switch"><div class="config-toggle-dot"></div></div>
+        </div>
+      </div>
+
+      <div class="config-summary">
+        <div class="config-summary-row base"><span>Care network access</span><span>£0.00</span></div>
+        <div class="config-summary-row addon" data-sum="gp"><span>GP consultations</span><span>-</span></div>
+        <div class="config-summary-row addon" data-sum="mental"><span>Mental health</span><span>-</span></div>
+        <div class="config-summary-row addon" data-sum="msk"><span>MSK assessments</span><span>-</span></div>
+        <div class="config-summary-row addon" data-sum="gym"><span>Gym discounts</span><span>-</span></div>
+        <div class="config-summary-divider"></div>
+        <div class="config-summary-total">
+          <div>
+            <div class="label">Your monthly cost</div>
+          </div>
+          <div>
+            <div class="amount" id="config-total">£0</div>
+            <div class="per" id="config-per">per employee / month</div>
+          </div>
+        </div>
+        <button class="config-summary-cta" onclick="goTo('app')">Continue to see the employee experience →</button>
+      </div>
+
+      <div class="config-note">Prices are illustrative. All toggles are optional. Even at £0, your employees get full network access at discounted rates.</div>
     </div>
   </div>
 </div>
 
-<!-- ========== STEP 3: APP EXPERIENCE ========== -->
+<!-- ============ APP ============ -->
 <div class="page" id="page-app">
-
-  <div class="commentary">
-    <div class="commentary-inner">
-      <div class="commentary-step">Step 3 of 3 · Employee experience</div>
-      <h2>One app. The same brand. <em>Different access</em>.</h2>
-      <p class="commentary-lead">Whichever layer the employer picks, the employee opens the same app. <strong>Features unlock or lock based on the layer</strong> — but the employee always sees what's possible. The service is identical across billing models; the difference is who pays.</p>
-      <div class="commentary-grid">
-        <div class="commentary-block">
-          <h4>What this solves</h4>
-          <p>Today, employees on different products have <strong>different experiences</strong> — different apps, different brands, zero cross-pollination of upgrade demand. One unified experience fixes all three. The On-Demand/Essentials split disappears entirely — it's just "Digital Services" with a different payment method.</p>
-        </div>
-        <div class="commentary-block">
-          <h4>The upgrade ladder</h4>
-          <p>A self-pay employee sees prices on every service. An employer-funded employee sees those same services as "Included." An Cashplan employee additionally sees their claim-back pots filling up. <strong>Each layer feels like a real upgrade</strong> — and creates natural internal demand for the next.</p>
-        </div>
+  <div class="app-page">
+    <div class="app-header-text">
+      <h2>What your <em>employees see</em></h2>
+      <p>The same app, the same brand. What changes is what's included and what's self-pay, depending on the plan you've chosen.</p>
+    </div>
+    <div class="app-controls">
+      <div class="app-controls-label">Viewing as employee on:</div>
+      <div class="app-selector-pills">
+        <button class="app-pill" data-plan="selfpay">Network access only</button>
+        <button class="app-pill active" data-plan="configured">Employer covers some services</button>
+        <button class="app-pill" data-plan="optimise">Cash Plan</button>
       </div>
     </div>
-  </div>
-
-  <div class="proto-frame">
-    <div class="proto-frame-inner">
-      <div class="proto-frame-label"></div>
-      <div class="proto-canvas">
-        <div class="app-page-bg">
-
-          <div class="app-controls">
-            <div class="app-controls-label">View as employee on:</div>
-            <div class="app-selector-pills">
-              <button class="app-pill" data-plan="selfpay">Digital Services (self-pay)</button>
-              <button class="app-pill active" data-plan="employer">Digital Services (employer-paid)</button>
-              <button class="app-pill" data-plan="cashplan">Cashplan</button>
-            </div>
-            <div class="app-controls-hint" id="app-hint">Digital health included by employer. Claim-back pots not unlocked.</div>
-          </div>
-
-          <div class="app-frame">
-            <div class="app-screen">
-              <div class="app-statusbar">
-                <span>9:41</span>
-                <span>●●●●●</span>
-              </div>
-              <div class="app-top">
-                <div class="app-greeting">Good morning,</div>
-                <div class="app-name">Sarah</div>
-                <div class="app-plan-pill">
-                  <div class="dot"></div>
-                  <span id="app-plan-label">Essentials plan</span>
-                </div>
-              </div>
-
-              <!-- NETWORK SERVICES -->
-              <div class="app-section">
-                <div class="app-section-title">Network services</div>
-                <div class="app-tile-grid">
-                  <div class="app-tile" data-service="gp">
-                    <div class="app-tile-icon">👨‍⚕️</div>
-                    <div class="app-tile-title">Book a GP</div>
-                    <div class="app-tile-sub">Video or phone</div>
-                    <div class="app-tile-cost-slot"></div>
-                  </div>
-                  <div class="app-tile" data-service="mental">
-                    <div class="app-tile-icon">💚</div>
-                    <div class="app-tile-title">Mental health</div>
-                    <div class="app-tile-sub">Talk to a counsellor</div>
-                    <div class="app-tile-cost-slot"></div>
-                  </div>
-                  <div class="app-tile" data-service="msk">
-                    <div class="app-tile-icon">🦴</div>
-                    <div class="app-tile-title">MSK assessment</div>
-                    <div class="app-tile-sub">Muscle &amp; joint pain</div>
-                    <div class="app-tile-cost-slot"></div>
-                  </div>
-                  <div class="app-tile" data-service="gym">
-                    <div class="app-tile-icon">🏋️</div>
-                    <div class="app-tile-title">Gym discounts</div>
-                    <div class="app-tile-sub">3,000+ venues</div>
-                    <div class="app-tile-cost-slot"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- CLAIM-BACK POTS -->
-              <div class="app-section">
-                <div class="app-section-title">Claim-back pots</div>
-                <div class="app-pot" data-pot="dental">
-                  <div class="app-pot-header">
-                    <div class="app-pot-name">🦷 Dental</div>
-                    <div class="app-pot-amount" id="dental-amount">£180 used / £250</div>
-                  </div>
-                  <div class="app-pot-bar"><div class="app-pot-fill" id="dental-fill" style="width:72%"></div></div>
-                </div>
-                <div class="app-pot" data-pot="optical">
-                  <div class="app-pot-header">
-                    <div class="app-pot-name">👓 Optical</div>
-                    <div class="app-pot-amount" id="optical-amount">£95 used / £200</div>
-                  </div>
-                  <div class="app-pot-bar"><div class="app-pot-fill" id="optical-fill" style="width:48%"></div></div>
-                </div>
-                <div class="app-pot" data-pot="physio">
-                  <div class="app-pot-header">
-                    <div class="app-pot-name">💪 Physio &amp; chiropractic</div>
-                    <div class="app-pot-amount" id="physio-amount">£40 used / £500</div>
-                  </div>
-                  <div class="app-pot-bar"><div class="app-pot-fill" id="physio-fill" style="width:8%"></div></div>
-                </div>
-              </div>
-
-              <!-- UPGRADE NUDGE -->
-              <div class="app-upgrade-card" id="app-upgrade-card">
-                <h4 id="app-upgrade-title">Claim-back available on Cashplan</h4>
-                <p id="app-upgrade-text">Ask your HR team about upgrading to claim back on dental, optical and physio.</p>
-                <button class="app-upgrade-btn" id="app-upgrade-btn">Learn more</button>
-              </div>
-            </div>
-          </div>
-
+    <div class="app-frame"><div class="app-screen">
+      <div class="app-statusbar"><span>9:41</span><span>●●●●●</span></div>
+      <div class="app-top">
+        <div class="app-greeting">Good morning,</div>
+        <div class="app-name">Sarah</div>
+        <div class="app-plan-pill"><div class="dot"></div><span id="app-plan-label">Digital Services</span></div>
+      </div>
+      <div class="app-section">
+        <div class="app-section-title">Network services</div>
+        <div class="app-tile-grid">
+          <div class="app-tile" data-service="gp"><div class="app-tile-icon">👨‍⚕️</div><div class="app-tile-title">Book a GP</div><div class="app-tile-sub">Video or phone</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="mental"><div class="app-tile-icon">💚</div><div class="app-tile-title">Mental health</div><div class="app-tile-sub">Talk to a counsellor</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="msk"><div class="app-tile-icon">🦴</div><div class="app-tile-title">MSK assessment</div><div class="app-tile-sub">Muscle & joint pain</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="gym"><div class="app-tile-icon">🏋️</div><div class="app-tile-title">Gym discounts</div><div class="app-tile-sub">3,000+ venues</div><div class="app-tile-cost-slot"></div></div>
         </div>
+      </div>
+      <div class="app-section">
+        <div class="app-section-title">Claim-back pots</div>
+        <div class="app-pot" data-pot="dental"><div class="app-pot-header"><div class="app-pot-name">🦷 Dental</div><div class="app-pot-amount" id="dental-amount">Not unlocked</div></div><div class="app-pot-bar"><div class="app-pot-fill" id="dental-fill" style="width:0%"></div></div></div>
+        <div class="app-pot" data-pot="optical"><div class="app-pot-header"><div class="app-pot-name">👓 Optical</div><div class="app-pot-amount" id="optical-amount">Not unlocked</div></div><div class="app-pot-bar"><div class="app-pot-fill" id="optical-fill" style="width:0%"></div></div></div>
+        <div class="app-pot" data-pot="physio"><div class="app-pot-header"><div class="app-pot-name">💪 Physio</div><div class="app-pot-amount" id="physio-amount">Not unlocked</div></div><div class="app-pot-bar"><div class="app-pot-fill" id="physio-fill" style="width:0%"></div></div></div>
+      </div>
+      <div class="app-upgrade-card" id="app-upgrade-card">
+        <h4 id="app-upgrade-title">Want claim-back cover?</h4>
+        <p id="app-upgrade-text">Upgrade to Optimise to claim back on dental, optical, physio and more.</p>
+        <button class="app-upgrade-btn" id="app-upgrade-btn">See upgrade options</button>
+      </div>
+    </div></div>
+  </div>
+</div>
+
+<!-- ============ QUOTE ============ -->
+<div class="page" id="page-quote">
+  <div class="config-page">
+    <div class="config-inner">
+      <div class="config-header">
+        <h2>Get a <em>Cash Plan</em> quote</h2>
+        <p>See an indicative price for your organisation. All digital services are included as standard.</p>
+      </div>
+
+      <div class="config-card" style="padding:28px">
+        <div style="margin-bottom:20px">
+          <label style="font-size:12px;font-weight:600;color:var(--gr);text-transform:uppercase;letter-spacing:.4px;display:block;margin-bottom:8px">Number of employees</label>
+          <input type="range" min="10" max="5000" value="100" step="10" id="emp-slider" style="width:100%;-webkit-appearance:none;height:6px;border-radius:3px;background:var(--bd);outline:none">
+          <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:11px;color:var(--gr)"><span>10</span><span id="emp-count" style="font-weight:700;color:var(--dk);font-size:14px">100 employees</span><span>5,000</span></div>
+        </div>
+
+        <div style="margin-bottom:20px">
+          <label style="font-size:12px;font-weight:600;color:var(--gr);text-transform:uppercase;letter-spacing:.4px;display:block;margin-bottom:8px">Benefit level</label>
+          <div style="display:flex;gap:8px" id="level-btns">
+            <button class="level-btn active" data-level="1" style="flex:1;padding:12px;border:1px solid var(--bd);border-radius:8px;background:var(--wh);font-family:inherit;font-size:13px;cursor:pointer;transition:all .15s">
+              <div style="font-weight:600">Standard</div>
+              <div style="font-size:11px;color:var(--gr)">Lower limits</div>
+            </button>
+            <button class="level-btn" data-level="2" style="flex:1;padding:12px;border:1px solid var(--bd);border-radius:8px;background:var(--wh);font-family:inherit;font-size:13px;cursor:pointer;transition:all .15s">
+              <div style="font-weight:600">Enhanced</div>
+              <div style="font-size:11px;color:var(--gr)">Higher limits</div>
+            </button>
+            <button class="level-btn" data-level="3" style="flex:1;padding:12px;border:1px solid var(--bd);border-radius:8px;background:var(--wh);font-family:inherit;font-size:13px;cursor:pointer;transition:all .15s">
+              <div style="font-weight:600">Comprehensive</div>
+              <div style="font-size:11px;color:var(--gr)">Maximum cover</div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="config-summary" style="margin-top:20px">
+        <div class="config-summary-row base"><span>Digital Services</span><span style="color:var(--sh)">Included</span></div>
+        <div class="config-summary-row base"><span>Cash plan cover</span><span id="quote-level">Standard</span></div>
+        <div class="config-summary-row base"><span>Employees</span><span id="quote-emp">100</span></div>
+        <div class="config-summary-divider"></div>
+        <div class="config-summary-total">
+          <div><div class="label">Estimated cost</div></div>
+          <div>
+            <div class="amount" id="quote-total">£3.99</div>
+            <div class="per">per employee / month</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:8px;font-size:12px;color:#aaa" id="quote-annual">Estimated annual cost: £4,788</div>
+        <div class="config-summary-divider"></div>
+        <div style="text-align:center;padding:8px 0 4px">
+          <div style="font-size:14px;font-weight:600;color:#fff;margin-bottom:4px">Ready to get a tailored quote?</div>
+          <div style="font-size:12px;color:#aaa;margin-bottom:14px">Speak to our team for pricing based on your exact requirements.</div>
+          <button class="config-summary-cta" style="margin-top:0">Talk to sales →</button>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:20px">
+        <button onclick="goTo('pricing')" style="background:none;border:none;font-family:inherit;font-size:13px;color:var(--sh);cursor:pointer;font-weight:500">← Back to plans</button>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-// Step navigation
-function goTo(step){
+function goTo(pg){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.proto-step').forEach(s=>s.classList.remove('active'));
-  document.getElementById('page-'+step).classList.add('active');
-  document.querySelector('.proto-step[data-step="'+step+'"]').classList.add('active');
+  document.querySelectorAll('.nav-link').forEach(l=>l.classList.remove('active'));
+  document.getElementById('page-'+pg).classList.add('active');
+  document.querySelectorAll('.nav-link[data-page="'+pg+'"]').forEach(l=>l.classList.add('active'));
   window.scrollTo({top:0,behavior:'smooth'});
 }
-document.querySelectorAll('.proto-step').forEach(s=>{
-  s.addEventListener('click',()=>goTo(s.dataset.step));
+document.querySelectorAll('.nav-link[data-page]').forEach(l=>l.addEventListener('click',()=>goTo(l.dataset.page)));
+
+// CONFIG TOGGLES
+const toggleState={gp:false,mental:false,msk:false,gym:false};
+const prices={gp:0.80,mental:0.60,msk:0.40,gym:0.20};
+
+document.querySelectorAll('.config-toggle-card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    const addon=card.dataset.addon;
+    toggleState[addon]=!toggleState[addon];
+    card.classList.toggle('active',toggleState[addon]);
+    updateSummary();
+  });
 });
 
-// App view selector
-const planConfigs={
-  selfpay:{
-    label:'Digital Services · Self-pay',
-    hint:'Same services, but the employee pays per use. The employer opens the door at no cost.',
-    services:{
-      gp:{type:'cost',value:'£49'},
-      mental:{type:'cost',value:'£65'},
-      msk:{type:'cost',value:'£38'},
-      gym:{type:'cost',value:'Discount'}
-    },
-    potsLocked:true,
-    upgradeTitle:'Your employer could include this for free',
-    upgradeText:'These services are available at self-pay rates. If your employer upgrades to employer-funded Digital Services, they become included at no cost to you.',
-    upgradeCTA:'Ask your employer',
-    showUpgrade:true
-  },
-  employer:{
-    label:'Digital Services · Employer-paid',
-    hint:'Digital health included by employer. Claim-back pots not unlocked.',
-    services:{
-      gp:{type:'included',value:'Included'},
-      mental:{type:'included',value:'Included'},
-      msk:{type:'included',value:'Included'},
-      gym:{type:'included',value:'Included'}
-    },
-    potsLocked:true,
-    upgradeTitle:'Want claim-back cover?',
-    upgradeText:'Your employer pays for digital health. Upgrading to Cashplan unlocks claim-back pots for dental, optical, physio and more.',
-    upgradeCTA:'See upgrade options',
-    showUpgrade:true
-  },
-  cashplan:{
-    label:'Cashplan',
-    hint:'Everything unlocked — digital health and claim-back pots are all live.',
-    services:{
-      gp:{type:'included',value:'Included'},
-      mental:{type:'included',value:'Included'},
-      msk:{type:'included',value:'Included'},
-      gym:{type:'included',value:'Included'}
-    },
-    potsLocked:false,
-    upgradeTitle:'Private medical insurance coming soon',
-    upgradeText:'The next layer adds PMI — hospital treatment, specialist referrals, surgery and cancer cover. Register your interest with HR.',
-    upgradeCTA:'Register interest',
-    showUpgrade:true
-  }
+function updateSummary(){
+  let total=0;
+  Object.keys(toggleState).forEach(k=>{
+    const row=document.querySelector('[data-sum="'+k+'"]');
+    if(toggleState[k]){
+      total+=prices[k];
+      row.classList.add('active');
+      row.querySelector('span:last-child').textContent='+£'+prices[k].toFixed(2);
+    } else {
+      row.classList.remove('active');
+      row.querySelector('span:last-child').textContent='-';
+    }
+  });
+  document.getElementById('config-total').textContent='£'+total.toFixed(2);
+  document.getElementById('config-per').textContent=total===0?'Free - employees pay per use':'per employee / month';
+}
+
+// APP
+const appCfgs={
+  selfpay:{label:'Digital Services · Network only',services:{gp:{t:'cost',v:'£49'},mental:{t:'cost',v:'£65'},msk:{t:'cost',v:'£38'},gym:{t:'cost',v:'Discount'}},pots:false,up:{title:'Your employer could cover these',text:'These services are available at self-pay rates. If your employer funds them, they become included at no cost to you.',cta:'Ask your employer'}},
+  configured:{label:'Digital Services · Configured',services:{gp:{t:'inc',v:'Included'},mental:{t:'inc',v:'Included'},msk:{t:'cost',v:'£38'},gym:{t:'cost',v:'Discount'}},pots:false,up:{title:'Upgrade to Cash Plan',text:'Your employer covers GP and mental health. Upgrading to Cash Plan adds claim-back pots for dental, optical, physio and more.',cta:'See upgrade options'}},
+  optimise:{label:'Cash Plan',services:{gp:{t:'inc',v:'Included'},mental:{t:'inc',v:'Included'},msk:{t:'inc',v:'Included'},gym:{t:'inc',v:'Included'}},pots:true,up:{title:'Private medical coming soon',text:'The next layer adds PMI. Hospital treatment, specialist referrals, surgery and cancer cover.',cta:'Register interest'}}
 };
-
-function applyAppView(plan){
-  const cfg=planConfigs[plan];
-  document.getElementById('app-plan-label').textContent=cfg.label;
-  document.getElementById('app-hint').textContent=cfg.hint;
-
-  // Update pills active state
-  document.querySelectorAll('.app-pill').forEach(p=>{
-    if(p.dataset.plan===plan){
-      p.classList.add('active');
-    } else {
-      p.classList.remove('active');
-    }
+function setApp(p){
+  const c=appCfgs[p];
+  document.getElementById('app-plan-label').textContent=c.label;
+  document.querySelectorAll('.app-pill').forEach(b=>b.classList.toggle('active',b.dataset.plan===p));
+  Object.keys(c.services).forEach(s=>{
+    const el=document.querySelector('[data-service="'+s+'"] .app-tile-cost-slot');
+    if(!el)return;
+    const sv=c.services[s];
+    el.className='app-tile-cost-slot '+(sv.t==='inc'?'app-tile-included':'app-tile-cost');
+    el.textContent=sv.v;
   });
-
-  // Update services tiles
-  Object.keys(cfg.services).forEach(s=>{
-    const tile=document.querySelector('.app-tile[data-service="'+s+'"]');
-    if(!tile)return;
-    const costEl=tile.querySelector('.app-tile-cost-slot');
-    if(!costEl)return;
-    const cfgS=cfg.services[s];
-    if(cfgS.type==='included'){
-      costEl.className='app-tile-cost-slot app-tile-included';
-      costEl.textContent=cfgS.value;
-    } else {
-      costEl.className='app-tile-cost-slot app-tile-cost';
-      costEl.textContent=cfgS.value;
-    }
+  document.querySelectorAll('.app-pot').forEach(pot=>{
+    const lk=pot.querySelector('.lock-icon');
+    if(c.pots){pot.classList.remove('locked');if(lk)lk.remove()}
+    else{pot.classList.add('locked');if(!lk){const l=document.createElement('div');l.className='lock-icon';l.textContent='🔒';pot.appendChild(l)}}
   });
-
-  // Update pots — lock/unlock
-  document.querySelectorAll('.app-pot').forEach(p=>{
-    const lockIcon=p.querySelector('.lock-icon');
-    if(cfg.potsLocked){
-      p.classList.add('locked');
-      if(!lockIcon){
-        const l=document.createElement('div');
-        l.className='lock-icon';
-        l.textContent='🔒';
-        p.appendChild(l);
-      }
-    } else {
-      p.classList.remove('locked');
-      if(lockIcon)lockIcon.remove();
-    }
-  });
-
-  // Update pot amounts
-  if(cfg.potsLocked){
+  if(c.pots){
+    document.getElementById('dental-amount').textContent='£180 / £250';
+    document.getElementById('optical-amount').textContent='£95 / £200';
+    document.getElementById('physio-amount').textContent='£40 / £500';
+    document.getElementById('dental-fill').style.width='72%';
+    document.getElementById('optical-fill').style.width='48%';
+    document.getElementById('physio-fill').style.width='8%';
+  } else {
     document.getElementById('dental-amount').textContent='Not unlocked';
     document.getElementById('optical-amount').textContent='Not unlocked';
     document.getElementById('physio-amount').textContent='Not unlocked';
     document.getElementById('dental-fill').style.width='0%';
     document.getElementById('optical-fill').style.width='0%';
     document.getElementById('physio-fill').style.width='0%';
-  } else {
-    document.getElementById('dental-amount').textContent='£180 used / £250';
-    document.getElementById('optical-amount').textContent='£95 used / £200';
-    document.getElementById('physio-amount').textContent='£40 used / £500';
-    document.getElementById('dental-fill').style.width='72%';
-    document.getElementById('optical-fill').style.width='48%';
-    document.getElementById('physio-fill').style.width='8%';
   }
-
-  // Upgrade card
-  const card=document.getElementById('app-upgrade-card');
-  if(cfg.showUpgrade){
-    card.style.display='block';
-    document.getElementById('app-upgrade-title').textContent=cfg.upgradeTitle;
-    document.getElementById('app-upgrade-text').textContent=cfg.upgradeText;
-    document.getElementById('app-upgrade-btn').textContent=cfg.upgradeCTA;
-  } else {
-    card.style.display='none';
-  }
+  document.getElementById('app-upgrade-title').textContent=c.up.title;
+  document.getElementById('app-upgrade-text').textContent=c.up.text;
+  document.getElementById('app-upgrade-btn').textContent=c.up.cta;
 }
+document.querySelectorAll('.app-pill').forEach(b=>b.addEventListener('click',()=>setApp(b.dataset.plan)));
+setApp('configured');
 
-document.querySelectorAll('.app-pill').forEach(p=>{
-  p.addEventListener('click',()=>applyAppView(p.dataset.plan));
-});
-applyAppView('employer');
+// QUOTE CALCULATOR
+const empSlider=document.getElementById('emp-slider');
+const levelMultipliers={1:3.99,2:5.49,3:7.99};
+const levelNames={1:'Standard',2:'Enhanced',3:'Comprehensive'};
+let currentLevel=1;
 
-// Billing toggle on Digital Services card
-document.querySelectorAll('.billing-opt').forEach(opt=>{
-  opt.addEventListener('click',()=>{
-    document.querySelectorAll('.billing-opt').forEach(o=>o.classList.remove('active'));
-    opt.classList.add('active');
-    const billing=opt.dataset.billing;
-    const priceEl=document.getElementById('ds-price');
-    const noteEl=document.getElementById('ds-note');
-    const tagEl=document.getElementById('ds-tagline');
-    if(billing==='employer'){
-      priceEl.querySelector('.plan-starting').style.display='block';
-      priceEl.querySelector('.plan-amount').innerHTML='<span class="currency">£</span>2';
-      document.getElementById('ds-period').textContent='per employee / month';
-      noteEl.textContent='Employer pays from £2/month — employee gets services included';
-      tagEl.textContent='24/7 digital healthcare included for every employee, plus access to our discounted care network.';
-    } else {
-      priceEl.querySelector('.plan-starting').style.display='block';
-      priceEl.querySelector('.plan-amount').innerHTML='<span class="currency">£</span>0';
-      document.getElementById('ds-period').textContent='to the employer';
-      noteEl.textContent='Employer pays nothing — employee pays per use at discounted rates';
-      tagEl.textContent='Give your team access to our care network at no cost to you. Employees pay for services themselves at discounted rates.';
-    }
+function updateQuote(){
+  const emps=parseInt(empSlider.value);
+  const ppm=levelMultipliers[currentLevel];
+  document.getElementById('emp-count').textContent=emps.toLocaleString()+' employees';
+  document.getElementById('quote-emp').textContent=emps.toLocaleString();
+  document.getElementById('quote-level').textContent=levelNames[currentLevel];
+  document.getElementById('quote-total').textContent='£'+ppm.toFixed(2);
+  document.getElementById('quote-annual').textContent='Estimated annual cost: £'+(ppm*emps*12).toLocaleString(undefined,{minimumFractionDigits:0,maximumFractionDigits:0});
+}
+empSlider.addEventListener('input',updateQuote);
+
+document.querySelectorAll('.level-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.level-btn').forEach(b=>{b.style.borderColor='var(--bd)';b.style.background='var(--wh)';b.classList.remove('active')});
+    btn.style.borderColor='var(--sh)';btn.style.background='var(--sh-lt)';btn.classList.add('active');
+    currentLevel=parseInt(btn.dataset.level);
+    updateQuote();
   });
 });
+// Set initial active state
+document.querySelector('.level-btn[data-level="1"]').style.borderColor='var(--sh)';
+document.querySelector('.level-btn[data-level="1"]').style.background='var(--sh-lt)';
 </script>
 
 </div><!-- /main -->
