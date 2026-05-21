@@ -227,8 +227,11 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
 .app-tile-title{font-size:12px;font-weight:600;line-height:1.3;margin-bottom:2px}
 .app-tile-sub{font-size:10px;color:var(--gr)}
 .app-tile-cost-slot{position:absolute;bottom:10px;right:12px;font-size:10px;font-weight:700}
-.app-tile-cost{color:var(--sh-dk);background:var(--sh-lt);padding:2px 6px;border-radius:4px}
-.app-tile-included{color:var(--sh-dk);font-weight:600}
+.app-tile-cost{color:#854F0B;background:#FAEEDA;padding:2px 6px;border-radius:4px}
+.app-tile-included{color:#0F6E56;background:#E1F5EE;padding:2px 6px;border-radius:4px;font-weight:600}
+.app-tile-claimable{color:#185FA5;background:#E6F1FB;padding:2px 6px;border-radius:4px;font-weight:600}
+.app-tile.covered{border-color:#0F6E56;background:#fafffe}
+.app-tile.covered .app-tile-icon{background:#E1F5EE}
 .app-pot{background:var(--wh);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:8px;position:relative}
 .app-pot-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
 .app-pot-name{font-size:12px;font-weight:600}
@@ -242,6 +245,11 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
 .app-upgrade-card h4{font-size:13px;font-weight:700;margin-bottom:5px}
 .app-upgrade-card p{font-size:11px;color:#bbb;line-height:1.5;margin-bottom:10px}
 .app-upgrade-btn{background:var(--sh);color:#fff;border:none;padding:8px 14px;border-radius:6px;font-size:11px;font-weight:600;font-family:inherit;cursor:pointer}
+
+.app-net-tile{background:var(--wh);border:1px solid var(--bd);border-radius:10px;padding:10px 12px;position:relative}
+.app-net-status{font-size:10px;font-weight:600;margin-top:6px;color:#854F0B}
+.app-net-status.claimable{color:#185FA5}
+.app-net-status.claimable::before{content:'✓ ';font-weight:700}
 
 @media(max-width:900px){
   .pricing-grid{grid-template-columns:1fr}.plan.popular{transform:none}
@@ -351,23 +359,23 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
 <!-- ============ PRICING ============ -->
 <div class="page" id="page-pricing">
   <section class="pr-hero">
-    <h1>Choose your <em>plan</em>.</h1>
-    <p>Start with free access to our care network. Add services, add cover, scale up when you're ready.</p>
+    <h1>One product. <em>Different layers of access</em>.</h1>
+    <p>Every employer starts with access to our healthcare network at member rates. Add cover, add services, scale up when you're ready.</p>
   </section>
 
   <div class="pricing-grid">
     <div class="plan">
-      <div class="plan-name-new">Digital Services</div>
-      <div class="plan-desc">Give your employees access to our curated healthcare network. GP, mental health, MSK, diagnostic scans, neurodiversity assessments and more, all at exclusive membership rates.</div>
+      <div class="plan-name-new">Health Membership</div>
+      <div class="plan-desc">Give your employees access to our curated healthcare network. GP, mental health, MSK, diagnostic scans, neurodiversity assessments and more, all at exclusive member rates.</div>
       <div class="plan-price">
         <div class="plan-amount" style="font-size:28px;letter-spacing:-.5px;color:var(--sh)">Free</div>
         <div class="plan-period">to the employer</div>
         <div class="plan-note">Employees access services at discounted member rates</div>
       </div>
       <button class="plan-cta-btn free" onclick="goTo('config')">Get started →</button>
-      <div class="plan-tagline">Your people join as Simplyhealth members and get immediate access to discounted healthcare across our network. You can then choose to cover specific services for them, building a subscription.</div>
+      <div class="plan-tagline">Your people join as Simplyhealth members and get immediate access to healthcare across our network. You can then choose to cover specific services for them.</div>
       <div class="plan-includes">
-        <div class="plan-includes-title">Network services</div>
+        <div class="plan-includes-title">Healthcare network</div>
         <div class="plan-inc-item"><span class="chk">✓</span>GP consultations</div>
         <div class="plan-inc-item"><span class="chk">✓</span>Mental health counselling</div>
         <div class="plan-inc-item"><span class="chk">✓</span>MSK assessments</div>
@@ -379,7 +387,7 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
 
     <div class="plan popular">
       <div class="plan-badge">Most popular</div>
-      <div class="plan-name-new">Cash Plan</div>
+      <div class="plan-name-new">Health Cover</div>
       <div class="plan-desc">All digital services included for your employees, plus claim-back pots for dental, optical, physio and more.</div>
       <div class="plan-price">
         <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--gr);margin-bottom:4px">Starting from</div>
@@ -390,7 +398,7 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
       <button class="plan-cta-btn primary" onclick="goTo('quote')">Get a quote</button>
       <div class="plan-tagline">The most complete everyday healthcare package. Every digital service included at no extra cost to the employee, plus cash-back on real-world treatment costs.</div>
       <div class="plan-includes">
-        <div class="plan-includes-title">Everything in Digital Services, plus</div>
+        <div class="plan-includes-title">Everything in Membership, plus</div>
         <div class="plan-inc-item"><span class="chk">✓</span>All digital services included (no self-pay)</div>
         <div class="plan-inc-item"><span class="chk">✓</span>Dental claim-back</div>
         <div class="plan-inc-item"><span class="chk">✓</span>Optical claim-back</div>
@@ -400,8 +408,8 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
     </div>
 
     <div class="plan">
-      <div class="plan-name-new">PMI</div>
-      <div class="plan-desc">Everything in Cash Plan, plus private medical insurance.</div>
+      <div class="plan-name-new">Private Medical Insurance</div>
+      <div class="plan-desc">Everything in Health Cover, plus cover for bigger, longer-term treatment. Hospital, surgery, cancer care, specialist referrals.</div>
       <div class="plan-price">
         <div class="plan-amount coming">Coming soon</div>
         <div class="plan-period">Premium tier</div>
@@ -410,7 +418,7 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
       <button class="plan-cta-btn">Register interest</button>
       <div class="plan-tagline">Day-to-day healthcare, cash-back cover, and private medical insurance. One provider for everything.</div>
       <div class="plan-includes">
-        <div class="plan-includes-title">Everything in Cash Plan, plus</div>
+        <div class="plan-includes-title">Everything in Health Cover, plus</div>
         <div class="plan-inc-item"><span class="chk">✓</span>Private hospital treatment</div>
         <div class="plan-inc-item"><span class="chk">✓</span>Specialist referrals</div>
         <div class="plan-inc-item"><span class="chk">✓</span>Surgery and recovery</div>
@@ -423,9 +431,9 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
   <div class="feat-section feat-headers">
     <div class="feat-row feat-row-header">
       <div class="feat-name feat-name-header">Compare plans</div>
-      <div class="feat-cell feat-col-header">Digital Services</div>
-      <div class="feat-cell feat-col-header feat-col-header-popular">Cash Plan</div>
-      <div class="feat-cell feat-col-header">PMI</div>
+      <div class="feat-cell feat-col-header">Health Membership</div>
+      <div class="feat-cell feat-col-header feat-col-header-popular">Health Cover</div>
+      <div class="feat-cell feat-col-header">Private Medical</div>
     </div>
   </div>
   <div class="feat-section">
@@ -449,6 +457,7 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
   </div>
 
   <div class="pr-foot-note">All plans: pre-existing conditions covered, no age limits, single app, whole-workforce coverage</div>
+
   <footer><div>© 2026 Simplyhealth</div><div>Privacy · Terms · Contact</div></footer>
 </div>
 
@@ -457,8 +466,8 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
   <div class="config-page">
     <div class="config-inner">
       <div class="config-header">
-        <h2>Set up <em>your plan</em></h2>
-        <p>Choose what you want to cover for your employees. Everything starts with access to our healthcare network.</p>
+        <h2>Set up your <em>membership</em></h2>
+        <p>Your employees become Simplyhealth members with access to our healthcare network at exclusive rates. Choose which services you want to cover for them.</p>
       </div>
 
       <div class="config-step-label">Your healthcare network</div>
@@ -511,7 +520,7 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
       <div class="config-step-label" style="margin-top:32px">Cover network services for your employees</div>
       <p style="font-size:13px;color:var(--gr);margin-bottom:16px;line-height:1.6">Toggle on to include these services as part of your employees' plan at no cost to them. Anything left off remains available at self-pay rates.</p>
 
-      <div class="config-toggle-card" data-addon="gp" data-price="0.80">
+      <div class="config-toggle-card" data-addon="gp" data-price="0">
         <div class="config-toggle-left">
           <div class="config-toggle-icon">👨‍⚕️</div>
           <div>
@@ -520,12 +529,12 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
           </div>
         </div>
         <div class="config-toggle-right">
-          <div class="config-toggle-price">+ £0.80 /emp/mo</div>
+          <div class="config-toggle-price" style="color:var(--gr)">+ £X/mo</div>
           <div class="config-toggle-switch"><div class="config-toggle-dot"></div></div>
         </div>
       </div>
 
-      <div class="config-toggle-card" data-addon="mental" data-price="0.60">
+      <div class="config-toggle-card" data-addon="mental" data-price="0">
         <div class="config-toggle-left">
           <div class="config-toggle-icon">💚</div>
           <div>
@@ -534,12 +543,12 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
           </div>
         </div>
         <div class="config-toggle-right">
-          <div class="config-toggle-price">+ £0.60 /emp/mo</div>
+          <div class="config-toggle-price" style="color:var(--gr)">+ £X/mo</div>
           <div class="config-toggle-switch"><div class="config-toggle-dot"></div></div>
         </div>
       </div>
 
-      <div class="config-toggle-card" data-addon="msk" data-price="0.40">
+      <div class="config-toggle-card" data-addon="msk" data-price="0">
         <div class="config-toggle-left">
           <div class="config-toggle-icon">🦴</div>
           <div>
@@ -548,12 +557,12 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
           </div>
         </div>
         <div class="config-toggle-right">
-          <div class="config-toggle-price">+ £0.40 /emp/mo</div>
+          <div class="config-toggle-price" style="color:var(--gr)">+ £X/mo</div>
           <div class="config-toggle-switch"><div class="config-toggle-dot"></div></div>
         </div>
       </div>
 
-      <div class="config-toggle-card" data-addon="gym" data-price="0.20">
+      <div class="config-toggle-card" data-addon="gym" data-price="0">
         <div class="config-toggle-left">
           <div class="config-toggle-icon">🏋️</div>
           <div>
@@ -562,31 +571,36 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
           </div>
         </div>
         <div class="config-toggle-right">
-          <div class="config-toggle-price">+ £0.20 /emp/mo</div>
+          <div class="config-toggle-price" style="color:var(--gr)">+ £X/mo</div>
           <div class="config-toggle-switch"><div class="config-toggle-dot"></div></div>
         </div>
       </div>
 
+      <!-- Upsell prompt - shown when multiple toggles are on -->
+      <div id="config-upsell" style="display:none;background:linear-gradient(135deg,#0a0a0a,#2a2a2a);border-radius:12px;padding:18px 20px;margin-top:12px;color:#fff;animation:fi .25s ease">
+        <div style="font-size:14px;font-weight:600;margin-bottom:6px">Looking like you'd benefit from Health Cover</div>
+        <div style="font-size:13px;color:#bbb;line-height:1.6;margin-bottom:12px">When you're covering multiple services, Health Cover gives you better value: all network services included for your employees, plus claim-back pots for dental, optical, physio and more. Starting from £3.99/employee/month.</div>
+        <button style="background:var(--sh);color:#fff;border:none;padding:10px 18px;border-radius:7px;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer" onclick="goTo('quote')">Get a Health Cover quote →</button>
+      </div>
+
       <div class="config-summary">
-        <div class="config-summary-row base"><span>Care network access</span><span>£0.00</span></div>
+        <div class="config-summary-row base"><span>Healthcare network access</span><span style="color:var(--sh)">Free</span></div>
         <div class="config-summary-row addon" data-sum="gp"><span>GP consultations</span><span>-</span></div>
         <div class="config-summary-row addon" data-sum="mental"><span>Mental health</span><span>-</span></div>
         <div class="config-summary-row addon" data-sum="msk"><span>MSK assessments</span><span>-</span></div>
         <div class="config-summary-row addon" data-sum="gym"><span>Gym discounts</span><span>-</span></div>
         <div class="config-summary-divider"></div>
         <div class="config-summary-total">
+          <div><div class="label">Services you're covering</div></div>
           <div>
-            <div class="label">Your monthly cost</div>
-          </div>
-          <div>
-            <div class="amount" id="config-total">£0</div>
-            <div class="per" id="config-per">per employee / month</div>
+            <div class="amount" id="config-total" style="font-size:22px">0 of 4</div>
+            <div class="per" id="config-per">Employees pay member rates for uncovered services</div>
           </div>
         </div>
-        <button class="config-summary-cta" onclick="goTo('app')">Continue to see the employee experience →</button>
+        <button class="config-summary-cta" onclick="goTo('app')">See the employee experience →</button>
       </div>
 
-      <div class="config-note">Prices are illustrative. All toggles are optional. Even at £0, your employees get full network access at discounted rates.</div>
+      <div class="config-note">All toggles are optional. Even with nothing covered, your employees get full network access at exclusive member rates.</div>
     </div>
   </div>
 </div>
@@ -601,9 +615,9 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
     <div class="app-controls">
       <div class="app-controls-label">Viewing as employee on:</div>
       <div class="app-selector-pills">
-        <button class="app-pill" data-plan="selfpay">Network access only</button>
+        <button class="app-pill" data-plan="selfpay">Health Membership only</button>
         <button class="app-pill active" data-plan="configured">Employer covers some services</button>
-        <button class="app-pill" data-plan="optimise">Cash Plan</button>
+        <button class="app-pill" data-plan="optimise">Health Cover</button>
       </div>
     </div>
     <div class="app-frame"><div class="app-screen">
@@ -611,15 +625,21 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
       <div class="app-top">
         <div class="app-greeting">Good morning,</div>
         <div class="app-name">Sarah</div>
-        <div class="app-plan-pill"><div class="dot"></div><span id="app-plan-label">Digital Services</span></div>
+        <div class="app-plan-pill"><div class="dot"></div><span id="app-plan-label">Membership</span></div>
       </div>
       <div class="app-section">
-        <div class="app-section-title">Network services</div>
-        <div class="app-tile-grid">
-          <div class="app-tile" data-service="gp"><div class="app-tile-icon">👨‍⚕️</div><div class="app-tile-title">Book a GP</div><div class="app-tile-sub">Video or phone</div><div class="app-tile-cost-slot"></div></div>
-          <div class="app-tile" data-service="mental"><div class="app-tile-icon">💚</div><div class="app-tile-title">Mental health</div><div class="app-tile-sub">Talk to a counsellor</div><div class="app-tile-cost-slot"></div></div>
-          <div class="app-tile" data-service="msk"><div class="app-tile-icon">🦴</div><div class="app-tile-title">MSK assessment</div><div class="app-tile-sub">Muscle & joint pain</div><div class="app-tile-cost-slot"></div></div>
-          <div class="app-tile" data-service="gym"><div class="app-tile-icon">🏋️</div><div class="app-tile-title">Gym discounts</div><div class="app-tile-sub">3,000+ venues</div><div class="app-tile-cost-slot"></div></div>
+        <div class="app-section-title">Your healthcare network</div>
+        <div class="app-tile-grid" style="grid-template-columns:1fr 1fr;gap:8px">
+          <div class="app-tile" data-service="gp"><div class="app-tile-icon">👨‍⚕️</div><div class="app-tile-title">GP</div><div class="app-tile-sub">Video or phone</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="mental"><div class="app-tile-icon">💚</div><div class="app-tile-title">Mental health</div><div class="app-tile-sub">24/7 counselling</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="msk"><div class="app-tile-icon">🦴</div><div class="app-tile-title">MSK</div><div class="app-tile-sub">Muscle and joint</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="gym"><div class="app-tile-icon">🏋️</div><div class="app-tile-title">Gym</div><div class="app-tile-sub">3,000+ venues</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="physio"><div class="app-tile-icon">💪</div><div class="app-tile-title">Physio</div><div class="app-tile-sub">300+ clinics</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="eyecare"><div class="app-tile-icon">👓</div><div class="app-tile-title">Eyecare</div><div class="app-tile-sub">20% off eyewear</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="neuro"><div class="app-tile-icon">🧠</div><div class="app-tile-title">Neurodiversity</div><div class="app-tile-sub">ADHD, Autism</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="scans"><div class="app-tile-icon">🔬</div><div class="app-tile-title">Scans</div><div class="app-tile-sub">Diagnostics</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="skin"><div class="app-tile-icon">✨</div><div class="app-tile-title">Skin</div><div class="app-tile-sub">Online dermatology</div><div class="app-tile-cost-slot"></div></div>
+          <div class="app-tile" data-service="gut"><div class="app-tile-icon">🥗</div><div class="app-tile-title">Gut health</div><div class="app-tile-sub">Dietitian-led</div><div class="app-tile-cost-slot"></div></div>
         </div>
       </div>
       <div class="app-section">
@@ -642,8 +662,8 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
   <div class="config-page">
     <div class="config-inner">
       <div class="config-header">
-        <h2>Get a <em>Cash Plan</em> quote</h2>
-        <p>See an indicative price for your organisation. All digital services are included as standard.</p>
+        <h2>Get a <em>Health Cover</em> quote</h2>
+        <p>See an indicative price for your organisation. All membership network services are included as standard.</p>
       </div>
 
       <div class="config-card" style="padding:28px">
@@ -673,7 +693,7 @@ footer{padding:28px 32px;background:var(--dk);color:#888;font-size:12px;display:
       </div>
 
       <div class="config-summary" style="margin-top:20px">
-        <div class="config-summary-row base"><span>Digital Services</span><span style="color:var(--sh)">Included</span></div>
+        <div class="config-summary-row base"><span>Membership network</span><span style="color:var(--sh)">Included</span></div>
         <div class="config-summary-row base"><span>Cash plan cover</span><span id="quote-level">Standard</span></div>
         <div class="config-summary-row base"><span>Employees</span><span id="quote-emp">100</span></div>
         <div class="config-summary-divider"></div>
@@ -724,38 +744,82 @@ document.querySelectorAll('.config-toggle-card').forEach(card=>{
 });
 
 function updateSummary(){
-  let total=0;
+  let count=0;
   Object.keys(toggleState).forEach(k=>{
     const row=document.querySelector('[data-sum="'+k+'"]');
     if(toggleState[k]){
-      total+=prices[k];
+      count++;
       row.classList.add('active');
-      row.querySelector('span:last-child').textContent='+£'+prices[k].toFixed(2);
+      row.querySelector('span:last-child').textContent='Covered';
     } else {
       row.classList.remove('active');
       row.querySelector('span:last-child').textContent='-';
     }
   });
-  document.getElementById('config-total').textContent='£'+total.toFixed(2);
-  document.getElementById('config-per').textContent=total===0?'Free - employees pay per use':'per employee / month';
+  document.getElementById('config-total').textContent=count+' of 4';
+  document.getElementById('config-per').textContent=count===0?'Employees pay member rates for all services':count+' service'+(count>1?'s':'')+' covered for your employees';
+  // Show upsell when 2+ toggles are on
+  const upsell=document.getElementById('config-upsell');
+  if(count>=2){upsell.style.display='block';}else{upsell.style.display='none';}
 }
 
 // APP
 const appCfgs={
-  selfpay:{label:'Digital Services · Network only',services:{gp:{t:'cost',v:'£49'},mental:{t:'cost',v:'£65'},msk:{t:'cost',v:'£38'},gym:{t:'cost',v:'Discount'}},pots:false,up:{title:'Your employer could cover these',text:'These services are available at self-pay rates. If your employer funds them, they become included at no cost to you.',cta:'Ask your employer'}},
-  configured:{label:'Digital Services · Configured',services:{gp:{t:'inc',v:'Included'},mental:{t:'inc',v:'Included'},msk:{t:'cost',v:'£38'},gym:{t:'cost',v:'Discount'}},pots:false,up:{title:'Upgrade to Cash Plan',text:'Your employer covers GP and mental health. Upgrading to Cash Plan adds claim-back pots for dental, optical, physio and more.',cta:'See upgrade options'}},
-  optimise:{label:'Cash Plan',services:{gp:{t:'inc',v:'Included'},mental:{t:'inc',v:'Included'},msk:{t:'inc',v:'Included'},gym:{t:'inc',v:'Included'}},pots:true,up:{title:'Private medical coming soon',text:'The next layer adds PMI. Hospital treatment, specialist referrals, surgery and cancer cover.',cta:'Register interest'}}
+  selfpay:{
+    label:'Health Membership',
+    services:{
+      gp:{t:'cost',v:'£49'},mental:{t:'cost',v:'£65'},msk:{t:'cost',v:'£38'},gym:{t:'cost',v:'Discount'},
+      physio:{t:'cost',v:'£45'},eyecare:{t:'cost',v:'£25+'},neuro:{t:'cost',v:'£695'},scans:{t:'cost',v:'£95+'},
+      skin:{t:'cost',v:'£49'},gut:{t:'cost',v:'£45'}
+    },
+    pots:false,
+    up:{title:'Your employer could cover these',text:'These services are available at member rates. If your employer funds them, they become included at no cost to you.',cta:'Ask your employer'}
+  },
+  configured:{
+    label:'Health Membership · Configured',
+    services:{
+      gp:{t:'inc',v:'3 left this year'},mental:{t:'inc',v:'4 left this year'},msk:{t:'cost',v:'£38'},gym:{t:'cost',v:'Discount'},
+      physio:{t:'cost',v:'£45'},eyecare:{t:'cost',v:'£25+'},neuro:{t:'cost',v:'£695'},scans:{t:'cost',v:'£95+'},
+      skin:{t:'cost',v:'£49'},gut:{t:'cost',v:'£45'}
+    },
+    pots:false,
+    up:{title:'Upgrade to Health Cover',text:'Your employer covers GP and mental health. Upgrading to Health Cover adds claim-back pots for dental, optical, physio and more.',cta:'See upgrade options'}
+  },
+  optimise:{
+    label:'Health Cover',
+    services:{
+      gp:{t:'inc',v:'Included'},mental:{t:'inc',v:'Included'},msk:{t:'inc',v:'Included'},gym:{t:'inc',v:'Included'},
+      physio:{t:'claim',v:'Claimable'},eyecare:{t:'claim',v:'Claimable'},neuro:{t:'claim',v:'Claimable'},scans:{t:'claim',v:'Claimable'},
+      skin:{t:'cost',v:'£49'},gut:{t:'cost',v:'£45'}
+    },
+    pots:true,
+    up:{title:'Private Medical Insurance coming soon',text:'The next layer adds private medical insurance. Hospital treatment, specialist referrals, surgery and cancer cover.',cta:'Register interest'}
+  }
 };
 function setApp(p){
   const c=appCfgs[p];
   document.getElementById('app-plan-label').textContent=c.label;
   document.querySelectorAll('.app-pill').forEach(b=>b.classList.toggle('active',b.dataset.plan===p));
   Object.keys(c.services).forEach(s=>{
-    const el=document.querySelector('[data-service="'+s+'"] .app-tile-cost-slot');
+    const tile=document.querySelector('[data-service="'+s+'"]');
+    if(!tile)return;
+    const el=tile.querySelector('.app-tile-cost-slot');
     if(!el)return;
     const sv=c.services[s];
-    el.className='app-tile-cost-slot '+(sv.t==='inc'?'app-tile-included':'app-tile-cost');
-    el.textContent=sv.v;
+    // Reset tile state
+    tile.classList.remove('covered');
+    if(sv.t==='inc'){
+      el.className='app-tile-cost-slot app-tile-included';
+      el.textContent=sv.v;
+      tile.classList.add('covered');
+    } else if(sv.t==='claim'){
+      el.className='app-tile-cost-slot app-tile-claimable';
+      el.textContent=sv.v;
+      tile.classList.add('covered');
+    } else {
+      el.className='app-tile-cost-slot app-tile-cost';
+      el.textContent=sv.v;
+    }
   });
   document.querySelectorAll('.app-pot').forEach(pot=>{
     const lk=pot.querySelector('.lock-icon');
